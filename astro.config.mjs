@@ -10,7 +10,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/adarshrkumar/CommonPS' },
+				{ icon: 'vscode', label: 'Extension', href: 'https://github.com/adarshrkumar/pscode-syntax-highlighter' },
+			],
 			sidebar: [
 				{
 					label: 'Guides',
