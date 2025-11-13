@@ -65,7 +65,7 @@ try {
 
   // Clean up temp directory
   console.log('Cleaning up...');
-  rmSync(TEMP_DIR, { recursive: true, force: true });
+  fs.rmSync(TEMP_DIR, { recursive: true, force: true });
 
   console.log('✓ Syntax highlighting setup complete!');
 } catch (error) {
@@ -74,7 +74,7 @@ try {
   // Attempt cleanup even on error
   if (fs.existsSync(TEMP_DIR)) {
     try {
-      rmSync(TEMP_DIR, { recursive: true, force: true });
+      fs.rmSync(TEMP_DIR, { recursive: true, force: true });
     } catch (cleanupError) {
       console.warn('Warning: Could not clean up temp directory');
     }
