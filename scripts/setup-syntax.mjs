@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { execSync } from 'child_process';
-import { existsSync, mkdirSync, copyFileSync, readFileSync, readdirSync } from 'fs';
+import fs from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -16,9 +16,9 @@ console.log('Setting up pscode syntax highlighting...');
 
 try {
   // Remove existing temp directory if it exists
-  if (existsSync(TEMP_DIR)) {
+  if (fs.existsSync(TEMP_DIR)) {
     console.log('Cleaning up existing temp directory...');
-    execSync(`rmdir /s /q "${TEMP_DIR}"`, { stdio: 'inherit', shell: true });
+    fs.rmSync(TEMP_DIR, { recursive: true, force: true });
   }
 
   // Clone the repository
@@ -26,8 +26,8 @@ try {
   execSync(`git clone --depth 1 "${REPO_URL}" "${TEMP_DIR}"`, { stdio: 'inherit' });
 
   // Create lang directory if it doesn't exist
-  if (!existsSync(LANG_DIR)) {
-    mkdirSync(LANG_DIR, { recursive: true });
+  if (!fs.existsSync(LANG_DIR)) {
+    fs.mkdirSync(LANG_DIR, { recursive: true });
   }
 
   // Copy relevant files from the root of the cloned repo
@@ -38,8 +38,8 @@ try {
     const sourcePath = join(TEMP_DIR, file);
     const destPath = join(LANG_DIR, file);
 
-    if (existsSync(sourcePath)) {
-      copyFileSync(sourcePath, destPath);
+    if (fs.existsSync(sourcePath)) {
+      fs.copyFileSync(sourcePath, destPath);
       console.log(`  ✓ Copied ${file}`);
     } else {
       console.warn(`  ⚠ Warning: ${file} not found in repository`);
@@ -50,31 +50,31 @@ try {
   const syntaxesSource = join(TEMP_DIR, 'syntaxes');
   const syntaxesDest = join(LANG_DIR, 'syntaxes');
 
-  if (existsSync(syntaxesSource)) {
+  if (fs.existsSync(syntaxesSource)) {
     console.log('Copying syntax files...');
-    if (!existsSync(syntaxesDest)) {
-      mkdirSync(syntaxesDest, { recursive: true });
+    if (!fs.existsSync(syntaxesDest)) {
+      fs.mkdirSync(syntaxesDest, { recursive: true });
     }
 
-    const syntaxFiles = readdirSync(syntaxesSource);
+    const syntaxFiles = fs.readdirSync(syntaxesSource);
     for (const file of syntaxFiles) {
-      copyFileSync(join(syntaxesSource, file), join(syntaxesDest, file));
+      fs.copyFileSync(join(syntaxesSource, file), join(syntaxesDest, file));
       console.log(`  ✓ Copied syntaxes/${file}`);
     }
   }
 
   // Clean up temp directory
   console.log('Cleaning up...');
-  execSync(`rmdir /s /q "${TEMP_DIR}"`, { stdio: 'inherit', shell: true });
+  rmSync(TEMP_DIR, { recursive: true, force: true });
 
   console.log('✓ Syntax highlighting setup complete!');
 } catch (error) {
   console.error('Error setting up syntax highlighting:', error.message);
 
   // Attempt cleanup even on error
-  if (existsSync(TEMP_DIR)) {
+  if (fs.existsSync(TEMP_DIR)) {
     try {
-      execSync(`rmdir /s /q "${TEMP_DIR}"`, { stdio: 'inherit', shell: true });
+      rmSync(TEMP_DIR, { recursive: true, force: true });
     } catch (cleanupError) {
       console.warn('Warning: Could not clean up temp directory');
     }
