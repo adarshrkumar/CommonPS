@@ -1,40 +1,61 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Welcome to Common Pseudocode
+description: A simple, readable pseudocode language for learning and teaching programming concepts
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: A simple, readable pseudocode language for learning and teaching programming concepts
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /getting-started/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/adarshrkumar/CommonPS
       icon: external
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## What is Common Pseudocode?
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+Common Pseudocode is a friendly pseudocode language designed to make learning programming concepts easy and intuitive. It combines familiar syntax from popular languages with natural language readability.
+
+<CardGrid>
+  <Card title="Easy to Learn" icon="open-book">
+    Works like JavaScript with Python-style indentation. Multiple syntax styles supported for the same operations.
+  </Card>
+  <Card title="Natural Language" icon="pencil">
+    Write `if age is greater than 18` or `if age > 18` - both work!
+  </Card>
+  <Card title="Rich Features" icon="puzzle">
+    Supports functions, arrays, records, loops, and all essential programming constructs.
+  </Card>
+  <Card title="VSCode Extension" icon="vscode">
+    Syntax highlighting available through our [VSCode extension](https://github.com/adarshrkumar/pscode-syntax-highlighter).
+  </Card>
 </CardGrid>
+
+## Quick Example
+
+```pscode
+// Calculate factorial
+function factorial takes in n
+    if n is less than or equal to 1
+        return 1
+    else
+        return n * factorial(n - 1)
+
+result = factorial(5)
+output "Factorial of 5 is: " result
+```
+
+## Language Highlights
+
+- **Flexible Syntax**: Use natural language or traditional operators
+- **Type Support**: Numbers, strings, booleans, arrays, and records
+- **Control Flow**: if/else, switch, for, while, do-while, repeat-until loops
+- **Built-in Functions**: Math, string manipulation, array operations
+- **Comments**: Single-line `//` and multi-line `/* */` comments
+- **No Semicolons**: Each line is treated as a statement automatically

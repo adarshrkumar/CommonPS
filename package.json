@@ -3,8 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "predev": "node scripts/setup-syntax.mjs",
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "npm run dev",
+    "prebuild": "node scripts/setup-syntax.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

@@ -1,0 +1,236 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Common Pseudo Code",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#booleans"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#storage-types"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#builtin-functions"
+		},
+		{
+			"include": "#control-flow"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.pscode",
+					"match": "//.*$"
+				},
+				{
+					"name": "comment.block.pscode",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.triple.pscode",
+					"begin": "\"\"\"",
+					"end": "\"\"\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.pscode",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.double.pscode",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.pscode",
+							"match": "\\\\."
+						},
+						{
+							"name": "constant.character.format.pscode",
+							"match": "\\{[^}]+\\}"
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.pscode",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.pscode",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.backtick.pscode",
+					"begin": "`",
+					"end": "`",
+					"patterns": [
+						{
+							"name": "constant.character.escape.pscode",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.pscode",
+					"match": "\\b\\d+\\.\\d+\\b"
+				},
+				{
+					"name": "constant.numeric.pscode",
+					"match": "\\b\\d+\\b"
+				}
+			]
+		},
+		"booleans": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.pscode",
+					"match": "\\b(true|false|True|False|TRUE|FALSE)\\b"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "keyword.control.pscode",
+					"match": "\\b(constant)\\b"
+				},
+				{
+					"name": "constant.language.null.pscode",
+					"match": "\\b(null|nothing)\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.conditional.pscode",
+					"match": "\\b(if|else|elif|elseif|then|switch|case|default)\\b"
+				},
+				{
+					"name": "keyword.control.loop.pscode",
+					"match": "\\b(for|while|loop|do|repeat|until)\\b"
+				},
+				{
+					"name": "keyword.control.flow.pscode",
+					"match": "\\b(return|break|continue|jump|skip|exit|stop)\\b"
+				},
+				{
+					"name": "keyword.control.exception.pscode",
+					"match": "\\b(try|catch|finally|error)\\b"
+				},
+				{
+					"name": "storage.modifier.pscode",
+					"match": "\\b(define)\\b"
+				},
+				{
+					"name": "keyword.other.pscode",
+					"match": "\\b(input|output|open|close|read|write|append)\\b"
+				},
+				{
+					"name": "keyword.other.pscode",
+					"match": "\\b(function|takes in|run|with|from|to|using|each|in|of|by|as|file|for reading|for writing|for appending|end of|line|new|record)\\b"
+				}
+			]
+		},
+		"storage-types": {
+			"patterns": [
+				{
+					"name": "storage.type.pscode",
+					"match": "\\b(number|string|boolean|array|integer|float|double)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.logical.pscode",
+					"match": "\\b(and|or|not|AND|OR|NOT)\\b"
+				},
+				{
+					"name": "keyword.operator.comparison.pscode",
+					"match": "\\b(equals|is equal to|does not equal|is not equal to|is greater than|is less than|is greater than or equal to|is less than or equal to|is in|contains)\\b"
+				},
+				{
+					"name": "keyword.operator.arithmetic.pscode",
+					"match": "\\b(modulus|to the power of|remainder after)\\b"
+				},
+				{
+					"name": "keyword.operator.assignment.pscode",
+					"match": "(\\+\\+|--|\\+=|-=|\\*=|/=|%=|\\^=)"
+				},
+				{
+					"name": "keyword.operator.comparison.pscode",
+					"match": "(==|!=|<=|>=|<|>|&&|\\|\\|)"
+				},
+				{
+					"name": "keyword.operator.arithmetic.pscode",
+					"match": "(\\+|-|\\*|/|%|\\^|\\*\\*)"
+				},
+				{
+					"name": "keyword.operator.assignment.pscode",
+					"match": "="
+				}
+			]
+		},
+		"builtin-functions": {
+			"patterns": [
+				{
+					"name": "support.function.math.pscode",
+					"match": "\\b(abs|round|floor|ceil|sqrt|max|min|random|sin|cos|tan|csc|sec|cot|sin\\^-1|cos\\^-1|tan\\^-1|csc\\^-1|sec\\^-1|cot\\^-1)\\b"
+				},
+				{
+					"name": "support.function.string.pscode",
+					"match": "\\b(length|trim|split|join|find|substring|uppercase|lowercase|convert|to uppercase|to lowercase)\\b"
+				},
+				{
+					"name": "support.function.array.pscode",
+					"match": "\\b(append|remove|insert|sort|push|pop|is number|is string|is boolean|is array|is integer|is float)\\b"
+				},
+				{
+					"name": "support.function.type.pscode",
+					"match": "\\b(convert to|to number|to string|to integer|to float)\\b"
+				}
+			]
+		},
+		"control-flow": {
+			"patterns": [
+				{
+					"name": "keyword.other.pscode",
+					"match": "\\b(ascending|descending|all the integers between|element at index)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.pscode"
+}
