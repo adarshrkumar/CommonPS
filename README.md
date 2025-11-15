@@ -274,9 +274,10 @@ switch userOption
 Basic loop:
 
 ```pscode
-loop from 1 to 10 using i
+loop from 1 to 10 using i {
     output i
     output ""
+}
 ```
 
 While loop:
@@ -297,19 +298,19 @@ for all the integers between 1 and 10 using i:
 Do-While loop (executes at least once):
 
 ```pscode
-do
+do {
     output "Enter a positive number: "
     input num
-while num <= 0
+} while num <= 0
 ```
 
 Repeat-Until loop (executes until condition is true):
 
 ```pscode
-repeat
+repeat {
     output "Enter password: "
     input password
-until password == "secret"
+} until password == "secret"
 ```
 
 ### Loop Control
@@ -317,19 +318,23 @@ until password == "secret"
 Break out of the loop early:
 
 ```pscode
-for i from 1 to 100
-    if i == 50
+for i from 1 to 100 {
+    if i == 50 {
         jump  // or break
+    }
     output i
+}
 ```
 
 Skip to next iteration:
 
 ```pscode
-for i from 1 to 10
-    if i % 2 == 0
+for i from 1 to 10 {
+    if i % 2 == 0 {
         skip  // or continue
+    }
     output i  // only outputs odd numbers
+}
 ```
 
 ### Arrays and Lists
@@ -606,63 +611,77 @@ close fileHandle
 #### Linear Search
 
 ```pscode
-function linearSearch takes in array and target
-    for i from 0 to length of array - 1
-        if array[i] equals target
+function linearSearch takes in array and target {
+    for i from 0 to length of array - 1 {
+        if array[i] equals target {
             return i
+        }
+    }
     return -1  // not found
+}
 ```
 
 #### Binary Search (on sorted array)
 
 ```pscode
-function binarySearch takes in array and target
+function binarySearch takes in array and target {
     left = 0
     right = length of array - 1
 
-    while left <= right
+    while left <= right {
         mid = floor((left + right) / 2)
 
-        if array[mid] equals target
+        if array[mid] equals target {
             return mid
-        else if array[mid] < target
+        } else if array[mid] < target {
             left = mid + 1
-        else
+        } else {
             right = mid - 1
+        }
+    }
 
     return -1  // not found
+}
 ```
 
 #### Bubble Sort
 
 ```pscode
-function bubbleSort takes in array
+function bubbleSort takes in array {
     n = length of array
 
-    for i from 0 to n - 1
-        for j from 0 to n - i - 2
-            if array[j] > array[j + 1]
+    for i from 0 to n - 1 {
+        for j from 0 to n - i - 2 {
+            if array[j] > array[j + 1] {
                 // Swap elements
                 temp = array[j]
                 array[j] = array[j + 1]
                 array[j + 1] = temp
+            }
+        }
+    }
 
     return array
+}
 ```
 
 #### Find Maximum in Array
 
 ```pscode
-function findMax takes in array
-    if length of array equals 0
+function findMax takes in array {
+    if length of array equals 0 {
         return null
+    }
 
     max = array[0]
-    for each value in array
-        if value > max
+    for each value in array {
+        if value > max {
             max = value
+        }
+    }
 
     return max
+}
 ```
 
 ### Best Practices
