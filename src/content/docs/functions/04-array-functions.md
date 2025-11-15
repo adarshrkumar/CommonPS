@@ -283,9 +283,11 @@ value = grid[0][0]  // 1 (row 0, column 0)
 ```pscode
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-for each row in grid
-    for each value in row
+for each row in grid {
+    for each value in row {
         output value
+    }
+}
 ```
 
 ---
@@ -303,8 +305,9 @@ append "eggs" to shoppingList
 
 // Display list
 output "Shopping List:"
-for each item in shoppingList
+for each item in shoppingList {
     output "- {item}"
+}
 
 // Check if we need to buy milk
 if "milk" is in shoppingList
@@ -318,6 +321,7 @@ sort shoppingList in ascending order
 
 // Display final list
 output "Final list ({length of shoppingList} items):"
-for i from 0 to length of shoppingList - 1
+for i from 0 to length of shoppingList - 1 {
     output "{i + 1}. {shoppingList[i]}"
+}
 ```

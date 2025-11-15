@@ -18,16 +18,18 @@ The find maximum algorithm:
 ## Basic Implementation
 
 ```pscode
-function findMax takes in array
+function findMax takes in array {
     if length of array equals 0
         return null
 
     max = array[0]
-    for each value in array
+    for each value in array {
         if value > max
             max = value
+    }
 
     return max
+}
 ```
 
 ## How It Works
@@ -73,9 +75,9 @@ output "Highest test score: {highestScore}"
 curve = 100 - highestScore
 output "Curve: +{curve} points"
 
-// Output:
-// Highest test score: 95
-// Curve: +5 points
+/* Output:
+   Highest test score: 95
+   Curve: +5 points */
 ```
 
 ### Example 3: Find Maximum with User Input
@@ -85,11 +87,12 @@ temperatures = []
 days = 7
 
 output "Enter temperatures for {days} days:"
-for i from 1 to days
+for i from 1 to days {
     output "Day {i}: "
     input temp
     temp = convert temp to number
     append temp to temperatures
+}
 
 maxTemp = findMax(temperatures)
 output "Highest temperature: {maxTemp}°F"
@@ -102,19 +105,22 @@ output "Highest temperature: {maxTemp}°F"
 Return both the value and position:
 
 ```pscode
-function findMaxWithIndex takes in array
+function findMaxWithIndex takes in array {
     if length of array equals 0
         return null
 
     maxValue = array[0]
     maxIndex = 0
 
-    for i from 1 to length of array - 1
-        if array[i] > maxValue
+    for i from 1 to length of array - 1 {
+        if array[i] > maxValue {
             maxValue = array[i]
             maxIndex = i
+        }
+    }
 
     return [maxValue, maxIndex]
+}
 
 numbers = [45, 23, 78, 12, 90, 34, 67]
 result = findMaxWithIndex(numbers)
@@ -127,18 +133,20 @@ output "Max value: {result[0]} at index {result[1]}"
 Find all occurrences of the maximum value:
 
 ```pscode
-function findAllMax takes in array
+function findAllMax takes in array {
     if length of array equals 0
         return []
 
     maxValue = findMax(array)
     indices = []
 
-    for i from 0 to length of array - 1
+    for i from 0 to length of array - 1 {
         if array[i] equals maxValue
             append i to indices
+    }
 
     return indices
+}
 
 scores = [95, 87, 95, 92, 95, 88]
 maxIndices = findAllMax(scores)
@@ -152,7 +160,7 @@ for each index in maxIndices
 Find the top N values in an array:
 
 ```pscode
-function findTopN takes in array and n
+function findTopN takes in array and n {
     if length of array <= n
         return array
 
@@ -164,17 +172,21 @@ function findTopN takes in array and n
         append value to arrayCopy
 
     // Find top N values
-    for i from 1 to n
+    for i from 1 to n {
         max = findMax(arrayCopy)
         append max to topValues
 
         // Remove max from copy
-        for j from 0 to length of arrayCopy - 1
-            if arrayCopy[j] equals max
+        for j from 0 to length of arrayCopy - 1 {
+            if arrayCopy[j] equals max {
                 remove element at index j from arrayCopy
                 jump
+            }
+        }
+    }
 
     return topValues
+}
 
 scores = [78, 92, 85, 67, 95, 88, 72, 90]
 top3 = findTopN(scores, 3)
@@ -188,18 +200,21 @@ for each score in top3
 Find the maximum value in a 2D array:
 
 ```pscode
-function findMax2D takes in grid
+function findMax2D takes in grid {
     if length of grid equals 0
         return null
 
     max = grid[0][0]
 
-    for each row in grid
-        for each value in row
+    for each row in grid {
+        for each value in row {
             if value > max
                 max = value
+        }
+    }
 
     return max
+}
 
 matrix = [[5, 12, 3], [8, 15, 7], [4, 9, 11]]
 maximum = findMax2D(matrix)
@@ -211,17 +226,21 @@ output "Maximum value: {maximum}"  // Output: 15
 Find the maximum value that meets a certain condition:
 
 ```pscode
-function findMaxLessThan takes in array and threshold
+function findMaxLessThan takes in array and threshold {
     max = null
     found = false
 
-    for each value in array
-        if value < threshold
-            if NOT found OR value > max
+    for each value in array {
+        if value < threshold {
+            if NOT found OR value > max {
                 max = value
                 found = true
+            }
+        }
+    }
 
     return max
+}
 
 numbers = [45, 78, 23, 90, 34, 67, 85]
 maxUnder80 = findMaxLessThan(numbers, 80)
@@ -231,30 +250,35 @@ output "Largest number under 80: {maxUnder80}"  // Output: 78
 ## Complete Example Program
 
 ```pscode
-function findMax takes in array
+function findMax takes in array {
     if length of array equals 0
         return null
 
     max = array[0]
-    for each value in array
+    for each value in array {
         if value > max
             max = value
+    }
 
     return max
+}
 
-function findMaxWithIndex takes in array
+function findMaxWithIndex takes in array {
     if length of array equals 0
         return null
 
     maxValue = array[0]
     maxIndex = 0
 
-    for i from 1 to length of array - 1
-        if array[i] > maxValue
+    for i from 1 to length of array - 1 {
+        if array[i] > maxValue {
             maxValue = array[i]
             maxIndex = i
+        }
+    }
 
     return [maxValue, maxIndex]
+}
 
 // Main program - Sales Analysis
 output "Monthly Sales Analysis"
@@ -298,16 +322,18 @@ output "Above average by: ${topSales - avgSales}"
 Finding the minimum is similar, just reverse the comparison:
 
 ```pscode
-function findMin takes in array
+function findMin takes in array {
     if length of array equals 0
         return null
 
     min = array[0]
-    for each value in array
+    for each value in array {
         if value < min  // Changed from >
             min = value
+    }
 
     return min
+}
 ```
 
 ### Find Range
@@ -315,7 +341,7 @@ function findMin takes in array
 Find the difference between maximum and minimum:
 
 ```pscode
-function findRange takes in array
+function findRange takes in array {
     if length of array equals 0
         return 0
 
@@ -324,6 +350,7 @@ function findRange takes in array
     range = max - min
 
     return range
+}
 
 numbers = [23, 45, 12, 67, 34]
 range = findRange(numbers)
@@ -335,21 +362,24 @@ output "Range: {range}"  // Output: 55 (67 - 12)
 Find the second-largest value:
 
 ```pscode
-function findSecondMax takes in array
+function findSecondMax takes in array {
     if length of array < 2
         return null
 
     first = array[0]
     second = null
 
-    for each value in array
-        if value > first
+    for each value in array {
+        if value > first {
             second = first
             first = value
+        }
         else if second equals null OR value > second AND value < first
             second = value
+    }
 
     return second
+}
 
 numbers = [45, 78, 23, 90, 67]
 secondMax = findSecondMax(numbers)
@@ -390,33 +420,33 @@ maximum = findMax(numbers)
 
 1. **Not checking for empty array**
 
-   ```pscode
-   // WRONG - crashes on empty array
-   max = array[0]
+    ```pscode
+    // WRONG - crashes on empty array
+    max = array[0]
 
-   // CORRECT - check first
-   if length of array equals 0
-       return null
-   max = array[0]
-   ```
+    // CORRECT - check first
+    if length of array equals 0
+        return null
+        max = array[0]
+    ```
 
 2. **Starting comparison from index 0**
 
-   ```pscode
-   // INEFFICIENT - compares first element to itself
-   for i from 0 to length of array - 1
+    ```pscode
+    // INEFFICIENT - compares first element to itself
+    for i from 0 to length of array - 1
 
-   // EFFICIENT - start from second element
-   for i from 1 to length of array - 1
+    // EFFICIENT - start from second element
+    for i from 1 to length of array - 1
    ```
 
 3. **Forgetting negative numbers**
 
-   ```pscode
-   // WRONG - assumes max starts at 0
-   max = 0
-   // Fails on arrays like [-5, -2, -8]
+    ```pscode
+    // WRONG - assumes max starts at 0
+    max = 0
+    // Fails on arrays like [-5, -2, -8]
 
-   // CORRECT - start with first element
-   max = array[0]
-   ```
+    // CORRECT - start with first element
+    max = array[0]
+    ```

@@ -12,7 +12,7 @@ output "Enter a day number (1-7): "
 input dayNumber
 dayNumber = convert dayNumber to number
 
-switch dayNumber
+switch dayNumber {
     case 1
         output "Monday"
         jump
@@ -36,6 +36,7 @@ switch dayNumber
         jump
     default
         output "Invalid day number"
+}
 ```
 
 ## Switch Keywords
@@ -92,7 +93,7 @@ output "Enter choice: "
 input choice
 choice = convert choice to number
 
-switch choice
+switch choice {
     case 1
         output "Starting new game..."
         jump
@@ -107,6 +108,7 @@ switch choice
         exit
     default
         output "Invalid choice. Please enter 1-4."
+}
 ```
 
 ## Switch with Strings
@@ -116,7 +118,7 @@ output "Enter a command (start/stop/pause/resume): "
 input command
 command = command to lowercase
 
-switch command
+switch command {
     case "start"
         output "Starting process..."
         jump
@@ -131,6 +133,7 @@ switch command
         jump
     default
         output "Unknown command: {command}"
+}
 ```
 
 ## Calculator Example
@@ -148,7 +151,7 @@ output "Enter second number: "
 input num2Input
 num2 = convert num2Input to number
 
-switch operation
+switch operation {
     case "+"
         result = num1 + num2
         output "{num1} + {num2} = {result}"
@@ -164,12 +167,14 @@ switch operation
     case "/"
         if num2 equals 0
             output "Error: Division by zero"
-        else
+        else {
             result = num1 / num2
             output "{num1} / {num2} = {result}"
+        }
         jump
     default
         output "Invalid operation"
+}
 ```
 
 ## Traffic Light Controller
@@ -181,9 +186,9 @@ output "Current light: {currentLight}"
 output "What should happen? (next/emergency/reset): "
 input action
 
-switch action
+switch action {
     case "next"
-        switch currentLight
+        switch currentLight {
             case "green"
                 currentLight = "yellow"
                 output "Changed to yellow"
@@ -196,6 +201,7 @@ switch action
                 currentLight = "green"
                 output "Changed to green"
                 jump
+        }
         jump
     case "emergency"
         currentLight = "red"
@@ -207,6 +213,7 @@ switch action
         jump
     default
         output "Invalid action"
+}
 ```
 
 ## Grade Converter
@@ -216,7 +223,7 @@ output "Enter letter grade (A, B, C, D, F): "
 input letterGrade
 letterGrade = letterGrade to uppercase
 
-switch letterGrade
+switch letterGrade {
     case "A"
         output "Excellent! Score range: 90-100"
         output "GPA: 4.0"
@@ -239,6 +246,7 @@ switch letterGrade
         jump
     default
         output "Invalid grade. Please enter A, B, C, D, or F"
+}
 ```
 
 ## Month Days Calculator
@@ -254,14 +262,15 @@ year = convert yearInput to number
 
 // Check if leap year
 isLeapYear = false
-if year % 4 equals 0
-    if year % 100 equals 0
+if year % 4 equals 0 {
+    if year % 100 equals 0 {
         if year % 400 equals 0
             isLeapYear = true
-    else
+    } else
         isLeapYear = true
+}
 
-switch month
+switch month {
     case 1
         output "January: 31 days"
         jump
@@ -303,6 +312,7 @@ switch month
         jump
     default
         output "Invalid month number"
+}
 ```
 
 ## Vending Machine
@@ -330,7 +340,7 @@ payment = convert paymentInput to number
 price = 0
 itemName = ""
 
-switch selection
+switch selection {
     case 1
         price = SODA_PRICE
         itemName = "Soda"
@@ -350,16 +360,18 @@ switch selection
     default
         output "Invalid selection"
         exit
+}
 
-if payment < price
+if payment < price {
     shortage = price - payment
     output "Insufficient funds. Need ${shortage} more."
-else
+} else {
     change = payment - price
     output "Dispensing {itemName}"
     if change > 0
         output "Your change: ${change}"
     output "Thank you!"
+}
 ```
 
 ## ATM Machine
@@ -386,11 +398,11 @@ switch choice
         input depositInput
         deposit = convert depositInput to number
 
-        if deposit > 0
+        if deposit > 0 {
             balance = balance + deposit
             output "Deposited: ${deposit}"
             output "New balance: ${balance}"
-        else
+        } else
             output "Invalid deposit amount"
         jump
     case 3
@@ -402,10 +414,11 @@ switch choice
             output "Insufficient funds"
         else if withdraw <= 0
             output "Invalid withdrawal amount"
-        else
+        else {
             balance = balance - withdraw
             output "Withdrawn: ${withdraw}"
             output "New balance: ${balance}"
+        }
         jump
     case 4
         output "Thank you for using our ATM"

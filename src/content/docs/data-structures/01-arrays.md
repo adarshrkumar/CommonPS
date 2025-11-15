@@ -131,9 +131,10 @@ for i from 0 to length of numbers - 1
 colors = ["red", "green", "blue"]
 i = 0
 
-while i < length of colors
+while i < length of colors {
     output colors[i]
     i++
+}
 ```
 
 ## Sorting Arrays
@@ -187,19 +188,21 @@ board = [
 ```pscode
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-for each row in grid
+for each row in grid {
     for each value in row
         output value " "
     output ""  // New line after each row
+}
 ```
 
 Or with indices:
 
 ```pscode
-for i from 0 to length of grid - 1
+for i from 0 to length of grid - 1 {
     for j from 0 to length of grid[i] - 1
         output grid[i][j] " "
     output ""
+}
 ```
 
 ## Common Array Operations

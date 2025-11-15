@@ -17,11 +17,13 @@ The linear search algorithm:
 ## Implementation
 
 ```pscode
-function linearSearch takes in array and target
-    for i from 0 to length of array - 1
+function linearSearch takes in array and target {
+    for i from 0 to length of array - 1 {
         if array[i] equals target
             return i
+    }
     return -1  // not found
+}
 ```
 
 ## How It Works
@@ -92,12 +94,14 @@ else
 Find how many times a value appears in an array:
 
 ```pscode
-function linearSearchCount takes in array and target
+function linearSearchCount takes in array and target {
     count = 0
-    for i from 0 to length of array - 1
+    for i from 0 to length of array - 1 {
         if array[i] equals target
             count++
+    }
     return count
+}
 
 numbers = [5, 2, 8, 2, 9, 2, 3]
 occurrences = linearSearchCount(numbers, 2)
@@ -109,12 +113,14 @@ output "Found {occurrences} occurrences"  // Found 3 occurrences
 Return all indices where the target appears:
 
 ```pscode
-function linearSearchAll takes in array and target
+function linearSearchAll takes in array and target {
     positions = []
-    for i from 0 to length of array - 1
+    for i from 0 to length of array - 1 {
         if array[i] equals target
             append i to positions
+    }
     return positions
+}
 
 numbers = [5, 2, 8, 2, 9, 2, 3]
 indices = linearSearchAll(numbers, 2)
@@ -128,11 +134,13 @@ for each index in indices
 Search using a custom condition:
 
 ```pscode
-function linearSearchGreaterThan takes in array and threshold
-    for i from 0 to length of array - 1
+function linearSearchGreaterThan takes in array and threshold {
+    for i from 0 to length of array - 1 {
         if array[i] > threshold
             return i
+    }
     return -1
+}
 
 numbers = [3, 7, 2, 9, 4, 1, 8]
 index = linearSearchGreaterThan(numbers, 5)
@@ -171,11 +179,13 @@ output "First number > 5 is at index {index}"  // index 1 (value 7)
 
 ```pscode
 // Complete linear search program
-function linearSearch takes in array and target
-    for i from 0 to length of array - 1
+function linearSearch takes in array and target {
+    for i from 0 to length of array - 1 {
         if array[i] equals target
             return i
+    }
     return -1
+}
 
 // Main program
 inventory = ["laptop", "mouse", "keyboard", "monitor", "webcam"]
@@ -191,14 +201,17 @@ input searchItem
 
 result = linearSearch(inventory, searchItem)
 
-if result != -1
+if result != -1 {
     output "Success! {searchItem} found at position {result + 1}"
     output "Location in warehouse: Aisle {result + 1}"
-else
+}
+else {
     output "Item {searchItem} not found in inventory"
     output "Would you like to add it? (yes/no)"
     input response
-    if response equals "yes"
+    if response equals "yes" {
         append searchItem to inventory
         output "Item added successfully!"
+    }
+}
 ```

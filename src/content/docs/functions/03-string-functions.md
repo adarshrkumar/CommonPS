@@ -305,10 +305,11 @@ fullName = fullName to uppercase
 // Split into first and last name
 nameParts = split fullName by " "
 
-if length of nameParts >= 2
+if length of nameParts >= 2 {
     firstName = nameParts[0]
     lastName = nameParts[length of nameParts - 1]
     output "First: {firstName}, Last: {lastName}"
-else
+} else {
     output "Please enter both first and last name"
+}
 ```

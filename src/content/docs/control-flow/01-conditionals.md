@@ -141,7 +141,7 @@ Test a value against multiple cases:
 output "Enter an option (1-6 or 9): "
 input userOption
 
-switch userOption
+switch userOption {
     case 1
         output "Booking a ticket"
         jump
@@ -165,6 +165,7 @@ switch userOption
         exit
     default
         output "Invalid option"
+}
 ```
 
 ### Switch Statement Notes
@@ -172,19 +173,19 @@ switch userOption
 - Use `jump` or `break` to exit the switch after a case
 - Use `exit`, `stop`, or `return` to terminate the program
 - The `default` case runs if no other case matches
-- Unlike some languages, cases don't "fall through" by default
+- Cases fall through to the next case by default unless you use `jump` or `break`
 
 ## Nested Conditionals
 
 You can nest if statements inside each other:
 
 ```pscode
-if hasAccount
+if hasAccount {
     if isVerified
         output "Welcome back!"
     else
         output "Please verify your email"
-else
+} else
     output "Please create an account"
 ```
 

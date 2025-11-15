@@ -42,12 +42,13 @@ output "Enter denominator: "
 input denInput
 denominator = convert denInput to number
 
-try
+try {
     result = numerator / denominator
     output "Result: {result}"
-catch error
+} catch error {
     output "Error: Cannot divide by zero"
     output "Please enter a non-zero denominator"
+}
 ```
 
 ### Invalid Type Conversion
@@ -56,14 +57,15 @@ catch error
 output "Enter a number: "
 input userInput
 
-try
+try {
     number = convert userInput to number
     output "You entered: {number}"
     squared = number ^ 2
     output "Squared: {squared}"
-catch error
+} catch error {
     output "Error: '{userInput}' is not a valid number"
     output "Please enter numeric digits only"
+}
 ```
 
 ### Array Index Out of Bounds
@@ -75,12 +77,13 @@ output "Enter index (0-4): "
 input indexInput
 index = convert indexInput to number
 
-try
+try {
     value = numbers[index]
     output "Value at index {index}: {value}"
-catch error
+} catch error {
     output "Error: Index {index} is out of bounds"
     output "Valid indices are 0 to {length of numbers - 1}"
+}
 ```
 
 ## File Operations with Error Handling
@@ -88,31 +91,33 @@ catch error
 ### Reading a File
 
 ```pscode
-try
+try {
     open file "data.txt" for reading as fileHandle
-    while not end of fileHandle
+    while not end of fileHandle {
         line = read line from fileHandle
         output line
+    }
     close fileHandle
-catch error
+} catch error {
     output "Error reading file: {error}"
     output "Make sure 'data.txt' exists"
-finally
+} finally
     output "File operation complete"
 ```
 
 ### Writing to a File
 
 ```pscode
-try
+try {
     open file "output.txt" for writing as fileHandle
     write "Hello, World!" to fileHandle
     write "Second line" to fileHandle
     close fileHandle
     output "File written successfully"
-catch error
+} catch error {
     output "Error writing file: {error}"
     output "Check file permissions"
+}
 ```
 
 ## Input Validation with Error Handling
@@ -120,26 +125,29 @@ catch error
 ### Validating Numeric Input
 
 ```pscode
-function getValidNumber takes in prompt and min and max
+function getValidNumber takes in prompt and min and max {
     valid = false
     result = 0
 
-    while NOT valid
+    while NOT valid {
         output prompt
         input userInput
 
-        try
+        try {
             number = convert userInput to number
 
             if number < min OR number > max
                 output "Error: Number must be between {min} and {max}"
-            else
+            else {
                 result = number
                 valid = true
-        catch error
+            }
+        } catch error
             output "Error: Please enter a valid number"
+    }
 
     return result
+}
 
 // Usage
 age = getValidNumber("Enter your age (0-120): ", 0, 120)
@@ -149,16 +157,19 @@ output "Age: {age}"
 ### Safe Array Access
 
 ```pscode
-function safeArrayAccess takes in array and index
-    try
-        if index < 0 OR index >= length of array
+function safeArrayAccess takes in array and index {
+    try {
+        if index < 0 OR index >= length of array {
             output "Error: Index out of range"
             return null
+        }
 
         return array[index]
-    catch error
+    } catch error {
         output "Error accessing array: {error}"
         return null
+    }
+}
 
 numbers = [10, 20, 30, 40, 50]
 value = safeArrayAccess(numbers, 2)
@@ -172,35 +183,39 @@ if value != null
 While Common Pseudocode doesn't distinguish error types in the syntax, you can handle different scenarios:
 
 ```pscode
-function processData takes in data
-    try
+function processData takes in data {
+    try {
         // Check for null/empty
-        if data equals null OR length of data equals 0
+        if data equals null OR length of data equals 0 {
             output "Error: No data provided"
             return false
+        }
 
         // Process data
         result = performCalculation(data)
 
         // Check result validity
-        if result < 0
+        if result < 0 {
             output "Warning: Negative result"
             return false
+        }
 
         return true
-    catch error
+    } catch error {
         output "Unexpected error: {error}"
         return false
+    }
+}
 ```
 
 ## Nested Try-Catch
 
 ```pscode
-try
+try {
     output "Enter filename: "
     input filename
 
-    try
+    try {
         open file filename for reading as fileHandle
         content = read line from fileHandle
         close fileHandle
@@ -210,17 +225,17 @@ try
             output "Number from file: {number}"
         catch error
             output "Error: File content is not a number"
-    catch error
+    } catch error
         output "Error: Cannot open file '{filename}'"
-catch error
+} catch error
     output "Fatal error: {error}"
 ```
 
 ## Calculator with Error Handling
 
 ```pscode
-function calculate takes in operation and num1 and num2
-    try
+function calculate takes in operation and num1 and num2 {
+    try {
         switch operation
             case "+"
                 return num1 + num2
@@ -229,19 +244,23 @@ function calculate takes in operation and num1 and num2
             case "*"
                 return num1 * num2
             case "/"
-                if num2 equals 0
+                if num2 equals 0 {
                     output "Error: Division by zero"
                     return null
+                }
                 return num1 / num2
             default
                 output "Error: Invalid operation '{operation}'"
                 return null
-    catch error
+    } catch error {
         output "Calculation error: {error}"
         return null
+    }
+}
+
 
 // Main program
-try
+try {
     output "Enter first number: "
     input num1Input
     num1 = convert num1Input to number
@@ -257,57 +276,63 @@ try
 
     if result != null
         output "Result: {result}"
-catch error
+} catch error
     output "Input error: Please enter valid numbers"
 ```
 
 ## Database Connection Example
 
 ```pscode
-function connectToDatabase takes in connectionString
+function connectToDatabase takes in connectionString {
     connection = null
 
-    try
+    try {
         output "Connecting to database..."
         connection = openConnection(connectionString)
         output "Connected successfully"
         return connection
-    catch error
+    } catch error {
         output "Database connection failed: {error}"
         return null
-    finally
+    } finally
         output "Connection attempt complete"
+}
 
-function queryDatabase takes in connection and query
-    try
-        if connection equals null
+function queryDatabase takes in connection and query {
+    try {
+        if connection equals null {
             output "Error: No database connection"
             return null
+        }
 
         output "Executing query..."
         result = executeQuery(connection, query)
         output "Query successful"
         return result
-    catch error
+    } catch error {
         output "Query failed: {error}"
         return null
-    finally
+    } finally
         output "Query execution complete"
+}
+
 
 // Main program
 connection = connectToDatabase("server=localhost;db=myapp")
 
-if connection != null
+if connection != null {
     data = queryDatabase(connection, "SELECT * FROM users")
 
     if data != null
         output "Retrieved {length of data} records"
 
-    try
+    try {
         closeConnection(connection)
         output "Connection closed"
-    catch error
+    } catch error
         output "Error closing connection: {error}"
+}
+
 ```
 
 ## Login System with Error Handling
@@ -319,69 +344,80 @@ constant CORRECT_PASSWORD = "secret123"
 attempts = 0
 authenticated = false
 
-try
-    while attempts < MAX_ATTEMPTS AND NOT authenticated
-        try
+try {
+    while attempts < MAX_ATTEMPTS AND NOT authenticated {
+        try {
             output "Enter password (Attempt {attempts + 1} of {MAX_ATTEMPTS}): "
             input password
 
-            if password equals ""
+            if password equals "" {
                 output "Error: Password cannot be empty"
                 attempts++
                 skip
+            }
 
-            if password equals CORRECT_PASSWORD
+            if password equals CORRECT_PASSWORD {
                 authenticated = true
                 output "Login successful!"
-            else
+            } else {
                 attempts++
                 remaining = MAX_ATTEMPTS - attempts
                 if remaining > 0
                     output "Incorrect password. {remaining} attempts remaining."
-        catch error
+            }
+        } catch error {
             output "Input error: {error}"
             attempts++
+        }
+    }
 
-    if NOT authenticated
+    if NOT authenticated {
         output "Login failed: Maximum attempts exceeded"
         output "Account locked for security"
-catch error
+    }
+} catch error {
     output "System error: {error}"
-finally
+}
+finally {
     if authenticated
         output "Welcome to the system!"
     else
         output "Access denied"
+}
 ```
 
 ## JSON Parser Example
 
 ```pscode
-function parseJSON takes in jsonString
-    try
+function parseJSON takes in jsonString {
+    try {
         // Simplified JSON parsing
-        if NOT jsonString contains "{"
+        if NOT jsonString contains "{" {
             output "Error: Invalid JSON format"
             return null
+        }
 
         // Parse the JSON
         data = parse(jsonString)
         return data
-    catch error
+    } catch error {
         output "JSON parsing error: {error}"
         output "Check JSON syntax"
         return null
+    }
+}
 
 // Usage
 jsonString = '{"name": "Alice", "age": 30}'
 
-try
+try {
     data = parseJSON(jsonString)
 
-    if data != null
+    if data != null {
         output "Name: {data.name}"
         output "Age: {data.age}"
-catch error
+    }
+} catch error
     output "Failed to process data: {error}"
 ```
 
@@ -409,15 +445,17 @@ catch error
 ```pscode
 fileHandle = null
 
-try
+try {
     open file "data.txt" for reading as fileHandle
     processFile(fileHandle)
-catch error
+} catch error
     output "Error: {error}"
-finally
-    if fileHandle != null
+finally {
+    if fileHandle != null {
         close fileHandle
         output "File closed"
+    }
+}
 ```
 
 ### 3. Don't Catch Errors You Can't Handle
@@ -432,10 +470,11 @@ catch error
 // Good - let error propagate or handle it
 try
     criticalOperation()
-catch error
+catch error {
     output "Critical error: {error}"
     output "Please contact support"
     exit
+}
 ```
 
 ### 4. Validate Before Risky Operations
@@ -453,7 +492,7 @@ else
 ```pscode
 try
     processData(data)
-catch error
+catch error {
     output "Error: {error}"
     output "Would you like to retry? (yes/no)"
     input retry
@@ -463,24 +502,27 @@ catch error
             processData(data)
         catch error
             output "Retry failed: {error}"
+}
 ```
 
 ### 6. Log Errors for Debugging
 
 ```pscode
-function logError takes in errorMessage
-    try
+function logError takes in errorMessage {
+    try {
         open file "errors.log" for appending as logFile
         write "{getCurrentTime()}: {errorMessage}" to logFile
         close logFile
-    catch error
+    } catch error
         output "Failed to log error"
+}
 
 try
     riskyOperation()
-catch error
+catch error {
     logError(error)
     output "An error occurred. Details logged."
+}
 ```
 
 ## When to Use Error Handling

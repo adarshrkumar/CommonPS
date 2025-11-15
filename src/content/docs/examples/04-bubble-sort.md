@@ -18,18 +18,22 @@ The bubble sort algorithm:
 ## Implementation
 
 ```pscode
-function bubbleSort takes in array
+function bubbleSort takes in array {
     n = length of array
 
-    for i from 0 to n - 1
-        for j from 0 to n - i - 2
-            if array[j] > array[j + 1]
+    for i from 0 to n - 1 {
+        for j from 0 to n - i - 2 {
+            if array[j] > array[j + 1] {
                 // Swap elements
                 temp = array[j]
                 array[j] = array[j + 1]
                 array[j + 1] = temp
+            }
+        }
+    }
 
     return array
+}
 ```
 
 ## How It Works
@@ -96,11 +100,12 @@ numbers = []
 count = 5
 
 output "Enter {count} numbers:"
-for i from 1 to count
+for i from 1 to count {
     output "Number {i}: "
     input num
     num = convert num to number
     append num to numbers
+}
 
 output "Sorting..."
 bubbleSort(numbers)
@@ -133,25 +138,29 @@ for i from 0 to length of scores - 1
 Stop early if the array becomes sorted:
 
 ```pscode
-function bubbleSortOptimized takes in array
+function bubbleSortOptimized takes in array {
     n = length of array
 
-    for i from 0 to n - 1
+    for i from 0 to n - 1 {
         swapped = false
 
-        for j from 0 to n - i - 2
-            if array[j] > array[j + 1]
+        for j from 0 to n - i - 2 {
+            if array[j] > array[j + 1] {
                 // Swap elements
                 temp = array[j]
                 array[j] = array[j + 1]
                 array[j + 1] = temp
                 swapped = true
+            }
+        }
 
         // If no swaps occurred, array is sorted
         if NOT swapped
             jump  // break out of loop
+    }
 
     return array
+}
 
 // Much faster on nearly-sorted arrays!
 sortedArray = [1, 2, 3, 5, 4]
@@ -163,20 +172,24 @@ bubbleSortOptimized(sortedArray)  // Only needs one pass
 Count the number of swaps performed:
 
 ```pscode
-function bubbleSortWithCount takes in array
+function bubbleSortWithCount takes in array {
     n = length of array
     swapCount = 0
 
-    for i from 0 to n - 1
-        for j from 0 to n - i - 2
-            if array[j] > array[j + 1]
+    for i from 0 to n - 1 {
+        for j from 0 to n - i - 2 {
+            if array[j] > array[j + 1] {
                 temp = array[j]
                 array[j] = array[j + 1]
                 array[j + 1] = temp
                 swapCount++
+            }
+        }
+    }
 
     output "Total swaps: {swapCount}"
     return array
+}
 ```
 
 ### Descending Bubble Sort
@@ -184,17 +197,21 @@ function bubbleSortWithCount takes in array
 Sort in descending order (largest to smallest):
 
 ```pscode
-function bubbleSortDescending takes in array
+function bubbleSortDescending takes in array {
     n = length of array
 
-    for i from 0 to n - 1
-        for j from 0 to n - i - 2
-            if array[j] < array[j + 1]  // Changed comparison
+    for i from 0 to n - 1 {
+        for j from 0 to n - i - 2 {
+            if array[j] < array[j + 1] {  // Changed comparison
                 temp = array[j]
                 array[j] = array[j + 1]
                 array[j + 1] = temp
+            }
+        }
+    }
 
     return array
+}
 
 numbers = [5, 2, 8, 1, 9]
 bubbleSortDescending(numbers)  // [9, 8, 5, 2, 1]
@@ -205,12 +222,12 @@ bubbleSortDescending(numbers)  // [9, 8, 5, 2, 1]
 Sort two arrays in parallel (keep elements aligned):
 
 ```pscode
-function bubbleSortParallel takes in names and scores
+function bubbleSortParallel takes in names and scores {
     n = length of names
 
-    for i from 0 to n - 1
-        for j from 0 to n - i - 2
-            if scores[j] < scores[j + 1]  // Sort by score descending
+    for i from 0 to n - 1 {
+        for j from 0 to n - i - 2 {
+            if scores[j] < scores[j + 1] {  // Sort by score descending
                 // Swap scores
                 tempScore = scores[j]
                 scores[j] = scores[j + 1]
@@ -220,35 +237,43 @@ function bubbleSortParallel takes in names and scores
                 tempName = names[j]
                 names[j] = names[j + 1]
                 names[j + 1] = tempName
+            }
+        }
+    }
+}
 
 students = ["Alice", "Bob", "Charlie"]
 scores = [78, 92, 85]
 bubbleSortParallel(students, scores)
-// students: ["Bob", "Charlie", "Alice"]
-// scores: [92, 85, 78]
+/* students: ["Bob", "Charlie", "Alice"]
+   scores: [92, 85, 78] */
 ```
 
 ## Complete Example Program
 
 ```pscode
-function bubbleSort takes in array
+function bubbleSort takes in array {
     n = length of array
     swapped = false
 
-    for i from 0 to n - 1
+    for i from 0 to n - 1 {
         swapped = false
 
-        for j from 0 to n - i - 2
-            if array[j] > array[j + 1]
+        for j from 0 to n - i - 2 {
+            if array[j] > array[j + 1] {
                 temp = array[j]
                 array[j] = array[j + 1]
                 array[j + 1] = temp
                 swapped = true
+            }
+        }
 
         if NOT swapped
             jump
+    }
 
     return array
+}
 
 // Main program
 output "Product Inventory Sorting System"
@@ -276,11 +301,14 @@ for each price in sortedPrices
 // Find products by sorted price
 output ""
 output "Products sorted by price:"
-for each sortedPrice in sortedPrices
-    for i from 0 to length of prices - 1
-        if prices[i] equals sortedPrice
+for each sortedPrice in sortedPrices {
+    for i from 0 to length of prices - 1 {
+        if prices[i] equals sortedPrice {
             output "{productNames[i]}: ${sortedPrice}"
             jump  // Move to next sorted price
+        }
+    }
+}
 ```
 
 ## When to Use Bubble Sort
@@ -316,15 +344,15 @@ for each sortedPrice in sortedPrices
 ## Comparison with Other Sorts
 
 ```pscode
-// Time to sort 10,000 elements (approximate):
-// Bubble Sort: ~100 ms
-// Quick Sort: ~1 ms
-// Merge Sort: ~2 ms
-// Built-in sort(): ~0.5 ms
+/* Time to sort 10,000 elements (approximate):
+   Bubble Sort: ~100 ms
+   Quick Sort: ~1 ms
+   Merge Sort: ~2 ms
+   Built-in sort(): ~0.5 ms
 
-// For 100 elements:
-// Bubble Sort: ~1 ms (acceptable)
-// Quick Sort: ~0.01 ms
+   For 100 elements:
+   Bubble Sort: ~1 ms (acceptable)
+   Quick Sort: ~0.01 ms */
 ```
 
 ## Common Mistakes

@@ -130,14 +130,15 @@ output "Enter your age: "
 input userInput
 
 // Check if input can be converted to a number
-if is number(userInput)
+if is number(userInput) {
     age = userInput
     if age >= 18
         output "You are an adult"
     else
         output "You are a minor"
-else
+} else {
     output "Invalid input. Please enter a number."
+}
 ```
 
 ---
@@ -147,12 +148,14 @@ else
 Ensure function parameters are of the correct type:
 
 ```pscode
-function calculateArea takes in width and height
-    if NOT is number(width) OR NOT is number(height)
+function calculateArea takes in width and height {
+    if NOT is number(width) OR NOT is number(height) {
         output "Error: width and height must be numbers"
         return -1
+    }
 
     return width * height
+}
 
 // Test the function
 area1 = calculateArea(5, 10)     // Returns 50
@@ -166,19 +169,22 @@ area2 = calculateArea("5", 10)   // Returns -1 with error message
 Check array types before processing:
 
 ```pscode
-function sumNumbers takes in data
-    if NOT is array(data)
+function sumNumbers takes in data {
+    if NOT is array(data) {
         output "Error: input must be an array"
         return 0
+    }
 
     sum = 0
-    for each value in data
+    for each value in data {
         if is number(value)
             sum = sum + value
         else
             output "Warning: skipping non-numeric value {value}"
+    }
 
     return sum
+}
 
 numbers = [1, 2, 3, 4, 5]
 result = sumNumbers(numbers)  // Returns 15
@@ -194,20 +200,22 @@ result = sumNumbers(mixed)     // Returns 9, with warnings
 Handle different types appropriately:
 
 ```pscode
-function processValue takes in value
+function processValue takes in value {
     if is number(value)
         output "Number: {value * 2}"
     else if is string(value)
         output "String: {value to uppercase}"
-    else if is boolean(value)
+    else if is boolean(value) {
         if value
             output "Boolean: TRUE"
         else
             output "Boolean: FALSE"
+    }
     else if is array(value)
         output "Array with {length of value} elements"
     else
         output "Unknown type"
+}
 
 processValue(42)           // "Number: 84"
 processValue("hello")      // "String: HELLO"
@@ -222,19 +230,21 @@ processValue([1, 2, 3])    // "Array with 3 elements"
 Use logical operators to check multiple conditions:
 
 ```pscode
-function validateUser takes in name and age
+function validateUser takes in name and age {
     nameValid = is string(name) AND length of name > 0
     ageValid = is number(age) AND age >= 0 AND age <= 150
 
-    if nameValid AND ageValid
+    if nameValid AND ageValid {
         output "User validation successful"
         return true
-    else
+    } else {
         if NOT nameValid
             output "Error: name must be a non-empty string"
         if NOT ageValid
             output "Error: age must be a number between 0 and 150"
         return false
+    }
+}
 
 // Test validation
 validateUser("Alice", 30)     // Success

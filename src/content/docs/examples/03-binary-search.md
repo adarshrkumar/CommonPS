@@ -19,11 +19,11 @@ The binary search algorithm:
 ## Implementation
 
 ```pscode
-function binarySearch takes in array and target
+function binarySearch takes in array and target {
     left = 0
     right = length of array - 1
 
-    while left <= right
+    while left <= right {
         mid = floor((left + right) / 2)
 
         if array[mid] equals target
@@ -32,8 +32,10 @@ function binarySearch takes in array and target
             left = mid + 1
         else
             right = mid - 1
+    }
 
     return -1  // not found
+}
 ```
 
 ## How It Works
@@ -128,23 +130,26 @@ else
 Find the first occurrence of a target in an array with duplicates:
 
 ```pscode
-function binarySearchFirst takes in array and target
+function binarySearchFirst takes in array and target {
     left = 0
     right = length of array - 1
     result = -1
 
-    while left <= right
+    while left <= right {
         mid = floor((left + right) / 2)
 
-        if array[mid] equals target
+        if array[mid] equals target {
             result = mid
             right = mid - 1  // Continue searching left
+        }
         else if array[mid] < target
             left = mid + 1
         else
             right = mid - 1
+    }
 
     return result
+}
 
 numbers = [1, 2, 2, 2, 3, 4, 5]
 firstTwo = binarySearchFirst(numbers, 2)
@@ -156,23 +161,26 @@ output "First occurrence at index {firstTwo}"  // index 1
 Find the last occurrence of a target:
 
 ```pscode
-function binarySearchLast takes in array and target
+function binarySearchLast takes in array and target {
     left = 0
     right = length of array - 1
     result = -1
 
-    while left <= right
+    while left <= right {
         mid = floor((left + right) / 2)
 
-        if array[mid] equals target
+        if array[mid] equals target {
             result = mid
             left = mid + 1  // Continue searching right
+        }
         else if array[mid] < target
             left = mid + 1
         else
             right = mid - 1
+    }
 
     return result
+}
 
 numbers = [1, 2, 2, 2, 3, 4, 5]
 lastTwo = binarySearchLast(numbers, 2)
@@ -184,19 +192,21 @@ output "Last occurrence at index {lastTwo}"  // index 3
 Find where to insert a value to maintain sorted order:
 
 ```pscode
-function binarySearchInsertionPoint takes in array and target
+function binarySearchInsertionPoint takes in array and target {
     left = 0
     right = length of array
 
-    while left < right
+    while left < right {
         mid = floor((left + right) / 2)
 
         if array[mid] < target
             left = mid + 1
         else
             right = mid
+    }
 
     return left
+}
 
 sortedNumbers = [10, 20, 30, 50, 60, 70]
 insertAt = binarySearchInsertionPoint(sortedNumbers, 45)
@@ -208,10 +218,10 @@ output "Insert 45 at index {insertAt}"  // index 3
 Binary search vs Linear search on 1,000,000 elements:
 
 ```pscode
-// Linear Search: Up to 1,000,000 comparisons
-// Binary Search: Maximum 20 comparisons
+/* Linear Search: Up to 1,000,000 comparisons
+   Binary Search: Maximum 20 comparisons
 
-// Why? log₂(1,000,000) ≈ 20
+   Why? log₂(1,000,000) ≈ 20 */
 ```
 
 **Example:**
@@ -233,25 +243,28 @@ index = binarySearch(largeArray, target)
 
 ```pscode
 // Binary search implementation and demonstration
-function binarySearch takes in array and target
+function binarySearch takes in array and target {
     left = 0
     right = length of array - 1
     comparisons = 0
 
-    while left <= right
+    while left <= right {
         comparisons++
         mid = floor((left + right) / 2)
 
-        if array[mid] equals target
+        if array[mid] equals target {
             output "Found after {comparisons} comparisons"
             return mid
+        }
         else if array[mid] < target
             left = mid + 1
         else
             right = mid - 1
+    }
 
     output "Not found after {comparisons} comparisons"
     return -1
+}
 
 // Main program
 output "Student Grade Lookup System"
@@ -269,12 +282,14 @@ searchID = convert searchID to number
 
 index = binarySearch(studentIDs, searchID)
 
-if index != -1
+if index != -1 {
     output "Student ID: {studentIDs[index]}"
     output "Grade: {grades[index]}"
-else
+}
+else {
     output "Student ID {searchID} not found"
     output "Valid IDs range from {studentIDs[0]} to {studentIDs[length of studentIDs - 1]}"
+}
 ```
 
 ## When to Use Binary Search

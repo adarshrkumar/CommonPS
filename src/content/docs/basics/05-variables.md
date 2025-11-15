@@ -141,18 +141,63 @@ student_count = 30
 
 ### Invalid Names
 
+Variables must follow specific naming rules. Here are common mistakes to avoid:
+
+**Starting with numbers:**
+
 ```pscode
-// Don't start with numbers
-2ndPlace = "Alice"  // Invalid
-
-// Don't use special characters (except underscore)
-user-name = "Bob"   // Invalid
-first.name = "Charlie"  // Invalid
-
-// Don't use reserved keywords as names
-if = 5  // Invalid (if is a keyword)
-while = 10  // Invalid (while is a keyword)
+2ndPlace = "Alice"     // Invalid - starts with number
+1stStudent = "Bob"     // Invalid - starts with number
+99problems = "Jay-Z"   // Invalid - starts with number
 ```
+
+**Using kebab-case (hyphens):**
+
+```pscode
+user-name = "Bob"      // Invalid - hyphens not allowed
+first-name = "Alice"   // Invalid - hyphens not allowed
+total-price = 99.99    // Invalid - hyphens not allowed
+is-valid = true        // Invalid - hyphens not allowed
+```
+
+**Using dots or other special characters:**
+
+```pscode
+first.name = "Charlie" // Invalid - dots not allowed
+user@name = "Dave"     // Invalid - @ not allowed
+total$ = 100           // Invalid - $ not allowed
+price% = 0.15          // Invalid - % not allowed
+user#id = 123          // Invalid - # not allowed
+```
+
+**Spaces in names:**
+
+```pscode
+first name = "Alice"   // Invalid - spaces not allowed
+total price = 99.99    // Invalid - spaces not allowed
+user count = 10        // Invalid - spaces not allowed
+```
+
+**Starting with special characters:**
+
+```pscode
+_private = "secret"    // Valid, but discouraged
+$value = 100           // Invalid - $ not allowed
+#count = 5             // Invalid - # not allowed
+@user = "alice"        // Invalid - @ not allowed
+```
+
+**Reserved keywords:**
+
+```pscode
+if = 5                 // Invalid - 'if' is a keyword
+while = 10             // Invalid - 'while' is a keyword
+for = 3                // Invalid - 'for' is a keyword
+function = "test"      // Invalid - 'function' is a keyword
+return = true          // Invalid - 'return' is a keyword
+```
+
+**Remember:** Use camelCase or snake_case, start with a letter, and avoid special characters (except underscore).
 
 ## Variable Scope
 
@@ -161,11 +206,12 @@ while = 10  // Invalid (while is a keyword)
 Variables defined inside functions or blocks:
 
 ```pscode
-function calculateTotal takes in price and quantity
+function calculateTotal takes in price and quantity {
     subtotal = price * quantity  // Local to this function
     tax = subtotal * 0.1         // Local to this function
     total = subtotal + tax       // Local to this function
     return total
+}
 
 // subtotal, tax, and total don't exist outside the function
 ```

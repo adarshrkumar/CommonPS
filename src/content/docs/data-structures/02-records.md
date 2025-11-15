@@ -10,10 +10,11 @@ Records (also called structures or structs) allow you to group related data toge
 Define a record structure with named fields:
 
 ```pscode
-record Person
+record Person {
     string name
     number age
     string email
+}
 ```
 
 This creates a blueprint for `Person` objects with three fields.
@@ -72,7 +73,7 @@ people = [
     Person("Charlie", 35, "charlie@example.com")
 ]
 
-// Access individual records
+/* Access individual records */
 output people[0].name  // "Alice"
 output people[1].age   // 25
 ```
@@ -86,11 +87,12 @@ people = [
     Person("Charlie", 35, "charlie@example.com")
 ]
 
-for each person in people
+for each person in people {
     output "Name: {person.name}"
     output "Age: {person.age}"
     output "Email: {person.email}"
     output ""
+}
 ```
 
 ## Nested Records
@@ -98,15 +100,17 @@ for each person in people
 Records can contain other records:
 
 ```pscode
-record Address
+record Address {
     string street
     string city
     string zipCode
+}
 
-record Employee
+record Employee {
     string name
     number employeeId
     Address address
+}
 
 // Create instances
 homeAddress = Address("123 Main St", "Springfield", "12345")
@@ -122,10 +126,11 @@ output employee.address.city  // "Springfield"
 ## Example: Student Management
 
 ```pscode
-record Student
+record Student {
     string name
     number studentId
     array grades
+}
 
 // Create students
 student1 = new Student
@@ -139,12 +144,13 @@ student2.studentId = 1002
 student2.grades = [88, 90, 85, 92]
 
 // Calculate average grade
-function calculateAverage takes in student
+function calculateAverage takes in student {
     sum = 0
     for each grade in student.grades
         sum += grade
     average = sum / length of student.grades
     return average
+}
 
 avg1 = calculateAverage(student1)
 output "{student1.name}'s average: {avg1}"
@@ -156,11 +162,12 @@ output "{student2.name}'s average: {avg2}"
 ## Example: Product Catalog
 
 ```pscode
-record Product
+record Product {
     string name
     number price
     number quantity
     string category
+}
 
 // Create product catalog
 products = [
@@ -171,12 +178,13 @@ products = [
 ]
 
 // Find products by category
-function findByCategory takes in products and category
+function findByCategory takes in products and category {
     results = []
     for each product in products
         if product.category equals category
             append product to results
     return results
+}
 
 electronics = findByCategory(products, "Electronics")
 
@@ -188,11 +196,12 @@ for each item in electronics
 ## Example: Book Library
 
 ```pscode
-record Book
+record Book {
     string title
     string author
     number year
     boolean isAvailable
+}
 
 // Create library
 library = [
@@ -202,18 +211,22 @@ library = [
 ]
 
 // Check out a book
-function checkoutBook takes in library and title
-    for each book in library
-        if book.title equals title
-            if book.isAvailable
+function checkoutBook takes in library and title {
+    for each book in library {
+        if book.title equals title {
+            if book.isAvailable {
                 book.isAvailable = false
                 output "Checked out: {book.title}"
                 return true
-            else
+            } else {
                 output "{book.title} is already checked out"
                 return false
+            }
+        }
+    }
     output "Book not found"
     return false
+}
 
 // Usage
 checkoutBook(library, "1984")
@@ -251,10 +264,11 @@ output emails[0]  // alice@example.com
 ### After (Records)
 
 ```pscode
-record Person
+record Person {
     string name
     number age
     string email
+}
 
 people = [
     Person("Alice", 30, "alice@example.com"),

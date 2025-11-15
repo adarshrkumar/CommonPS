@@ -61,17 +61,17 @@ MAX_SCORE = 150  // Error: cannot reassign constant
 ```pscode
 constant SPEED_OF_LIGHT = 299792458  // meters per second
 
-// Later in code...
-// SPEED_OF_LIGHT = 300000000  // Error - prevents mistakes
+/* Later in code...
+   SPEED_OF_LIGHT = 300000000  // Error - prevents mistakes */
 ```
 
 ### 2. Improve Readability
 
 ```pscode
-// Without constants - unclear what 0.08 means
+/* Without constants - unclear what 0.08 means */
 total = price + (price * 0.08)
 
-// With constants - much clearer
+/* With constants - much clearer */
 constant TAX_RATE = 0.08
 total = price + (price * TAX_RATE)
 ```
@@ -79,10 +79,10 @@ total = price + (price * TAX_RATE)
 ### 3. Easy Maintenance
 
 ```pscode
-// Define once, use everywhere
+/* Define once, use everywhere */
 constant MAX_LOGIN_ATTEMPTS = 3
 
-// Used in multiple places
+/* Used in multiple places */
 attempts = 0
 while attempts < MAX_LOGIN_ATTEMPTS
     // login logic
@@ -129,10 +129,11 @@ constant DISCOUNT_RATE = 0.15
 subtotal = 100
 tax = subtotal * TAX_RATE
 
-if subtotal >= FREE_SHIPPING_THRESHOLD
+if subtotal >= FREE_SHIPPING_THRESHOLD {
     shipping = 0
-else
+} else {
     shipping = SHIPPING_COST
+}
 
 total = subtotal + tax + shipping
 ```
@@ -150,9 +151,10 @@ constant LEVEL_COUNT = 10
 playerHealth = MAX_HEALTH
 currentLevel = 1
 
-while currentLevel <= LEVEL_COUNT
+while currentLevel <= LEVEL_COUNT {
     // game logic
     currentLevel++
+}
 ```
 
 ### Validation Rules
@@ -168,12 +170,13 @@ constant MAX_USERNAME_LENGTH = 20
 output "Enter password: "
 input password
 
-if length of password < MIN_PASSWORD_LENGTH
+if length of password < MIN_PASSWORD_LENGTH {
     output "Password must be at least {MIN_PASSWORD_LENGTH} characters"
-else if length of password > MAX_PASSWORD_LENGTH
+} else if length of password > MAX_PASSWORD_LENGTH {
     output "Password too long (max {MAX_PASSWORD_LENGTH} characters)"
-else
+} else {
     output "Password accepted"
+}
 ```
 
 ## Examples
@@ -222,20 +225,22 @@ isMember = memberInput equals "yes"
 subtotal = cartTotal
 
 // Apply member discount
-if isMember
+if isMember {
     discount = subtotal * MEMBER_DISCOUNT
     subtotal = subtotal - discount
     output "Member discount applied: ${discount}"
+}
 
 // Calculate tax
 tax = subtotal * TAX_RATE
 
 // Determine shipping
-if cartTotal >= FREE_SHIPPING_MINIMUM
+if cartTotal >= FREE_SHIPPING_MINIMUM {
     shipping = 0
     output "Free shipping!"
-else
+} else {
     shipping = SHIPPING_COST
+}
 
 // Calculate total
 total = subtotal + tax + shipping
@@ -266,14 +271,15 @@ output "Enter temperature: "
 input tempInput
 temp = convert tempInput to number
 
-if choice equals 1
+if choice equals 1 {
     celsius = (temp - FAHRENHEIT_OFFSET) * FAHRENHEIT_SCALE
     output "{temp}°F = {celsius}°C"
-else if choice equals 2
+} else if choice equals 2 {
     fahrenheit = (temp / FAHRENHEIT_SCALE) + FAHRENHEIT_OFFSET
     output "{temp}°C = {fahrenheit}°F"
-else
+} else {
     output "Invalid choice"
+}
 ```
 
 ### Grade Boundaries
@@ -289,18 +295,19 @@ output "Enter score (0-100): "
 input scoreInput
 score = convert scoreInput to number
 
-if score < 0 OR score > MAX_SCORE
+if score < 0 OR score > MAX_SCORE {
     output "Invalid score"
-else if score >= GRADE_A_MIN
+} else if score >= GRADE_A_MIN {
     output "Grade: A"
-else if score >= GRADE_B_MIN
+} else if score >= GRADE_B_MIN {
     output "Grade: B"
-else if score >= GRADE_C_MIN
+} else if score >= GRADE_C_MIN {
     output "Grade: C"
-else if score >= GRADE_D_MIN
+} else if score >= GRADE_D_MIN {
     output "Grade: D"
-else
+} else {
     output "Grade: F"
+}
 ```
 
 ### Retry Logic
@@ -312,18 +319,20 @@ constant CORRECT_PASSWORD = "secret123"
 attempts = 0
 authenticated = false
 
-while attempts < MAX_ATTEMPTS AND NOT authenticated
+while attempts < MAX_ATTEMPTS AND NOT authenticated {
     output "Enter password (Attempt {attempts + 1} of {MAX_ATTEMPTS}): "
     input password
 
-    if password equals CORRECT_PASSWORD
+    if password equals CORRECT_PASSWORD {
         authenticated = true
         output "Access granted!"
-    else
+    } else {
         attempts++
         remaining = MAX_ATTEMPTS - attempts
         if remaining > 0
             output "Incorrect. {remaining} attempts remaining."
+    }
+}
 
 if NOT authenticated
     output "Access denied. Account locked."
@@ -406,11 +415,13 @@ userCurrency = "EUR"    // User can select different currency
 
    ```pscode
    // Instead of:
-   if temperature > 100
+   if temperature > 100 {
        output "Water is boiling"
+   }
 
    // Use:
    constant WATER_BOILING_POINT = 100
-   if temperature > WATER_BOILING_POINT
+   if temperature > WATER_BOILING_POINT {
        output "Water is boiling"
+   }
    ```
