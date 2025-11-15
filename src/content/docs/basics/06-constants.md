@@ -68,10 +68,10 @@ constant SPEED_OF_LIGHT = 299792458  // meters per second
 ### 2. Improve Readability
 
 ```pscode
-/* Without constants - unclear what 0.08 means */
+// Without constants - unclear what 0.08 means
 total = price + (price * 0.08)
 
-/* With constants - much clearer */
+// With constants - much clearer
 constant TAX_RATE = 0.08
 total = price + (price * TAX_RATE)
 ```
@@ -79,10 +79,10 @@ total = price + (price * TAX_RATE)
 ### 3. Easy Maintenance
 
 ```pscode
-/* Define once, use everywhere */
+// Define once, use everywhere
 constant MAX_LOGIN_ATTEMPTS = 3
 
-/* Used in multiple places */
+// Used in multiple places
 attempts = 0
 while attempts < MAX_LOGIN_ATTEMPTS
     // login logic

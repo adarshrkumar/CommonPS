@@ -21,8 +21,8 @@ Multi-line comment:
 
 ```pscode
 /*
-This is a multi-line comment
-that spans multiple lines
+    This is a multi-line comment
+    that spans multiple lines
 */
 x = 10
 ```

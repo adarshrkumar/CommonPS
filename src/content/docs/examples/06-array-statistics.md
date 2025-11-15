@@ -54,13 +54,13 @@ output "Highest Score: {stats[3]}"
 output "Range: {stats[4]}"
 output "Number of Students: {stats[5]}"
 
-// Output:
-// Total Points: 667
-// Average Score: 83.375
-// Lowest Score: 67
-// Highest Score: 95
-// Range: 28
-// Number of Students: 8
+/* Output:
+   Total Points: 667
+   Average Score: 83.375
+   Lowest Score: 67
+   Highest Score: 95
+   Range: 28
+   Number of Students: 8 */
 ```
 
 ### Example 2: Temperature Analysis
@@ -76,11 +76,11 @@ output "Coldest Day: {stats[2]}°F"
 output "Warmest Day: {stats[3]}°F"
 output "Temperature Variation: {stats[4]}°F"
 
-// Output:
-// Average Temperature: 73.71°F
-// Coldest Day: 68°F
-// Warmest Day: 80°F
-// Temperature Variation: 12°F
+/* Output:
+   Average Temperature: 73.71°F
+   Coldest Day: 68°F
+   Warmest Day: 80°F
+   Temperature Variation: 12°F */
 ```
 
 ### Example 3: Sales Performance

@@ -6,8 +6,10 @@ description: Creating reusable code with functions and procedures in Common Pseu
 Functions allow you to organize code into reusable blocks that can be called from different parts of your program. They're essential for writing clean, maintainable code.
 
 :::tip[More on Functions]
+
 - For a comprehensive guide on creating functions, see [Creating Functions](/functions/creating-functions)
 - For built-in functions (math, string, array operations), see the [Functions section](/functions/overview/)
+
 :::
 
 ## Basic Function

@@ -20,8 +20,8 @@ Multi-line comments are enclosed between `/*` and `*/`:
 
 ```pscode
 /*
-This is a multi-line comment
-that spans multiple lines
+    This is a multi-line comment
+    that spans multiple lines
 */
 x = 10
 ```

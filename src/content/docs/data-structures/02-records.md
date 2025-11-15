@@ -73,7 +73,7 @@ people = [
     Person("Charlie", 35, "charlie@example.com")
 ]
 
-/* Access individual records */
+// Access individual records
 output people[0].name  // "Alice"
 output people[1].age   // 25
 ```
