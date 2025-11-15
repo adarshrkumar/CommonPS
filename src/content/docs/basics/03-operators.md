@@ -111,6 +111,7 @@ if x >= y           // Greater than or equal to
 if x <= y           // Less than or equal to
 ```
 
+<!-- markdownlint-disable MD024 -->
 ### Example
 
 ```pscode

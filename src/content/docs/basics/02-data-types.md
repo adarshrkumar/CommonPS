@@ -82,6 +82,7 @@ boolean isComplete = false
 ```
 
 Boolean literals are case-insensitive for the whole word:
+
 - Valid: `true`, `True`, `TRUE`, `false`, `False`, `FALSE`
 - Invalid: `tRuE`, `fAlSe` (mixed case not supported)
 
