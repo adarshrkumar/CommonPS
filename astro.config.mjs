@@ -9,9 +9,9 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Load the pscode syntax definition
-const pscodeLang = JSON.parse(
-    fs.readFileSync(join(__dirname, 'lang/syntaxes/pscode.tmLanguage.json'), 'utf-8')
+// Load the commonps syntax definition
+const commonpsLang = JSON.parse(
+    fs.readFileSync(join(__dirname, 'lang/syntaxes/commonps.tmLanguage.json'), 'utf-8')
 );
 
 // https://astro.build/config
@@ -30,9 +30,9 @@ export default defineConfig({
                 shiki: {
                     langs: [
                         {
-                            ...pscodeLang,
-                            name: 'pscode',
-                            aliases: ['pseudocode', 'ps', 'pseudo', 'commonps'],
+                            ...commonpsLang,
+                            name: 'commonps',
+                            aliases: ['pseudocode', 'pseudo', 'pscode'],
                         },
                     ],
                 },
