@@ -197,7 +197,7 @@ if currentNumber equals 5 // or if currentNumber is equal to 5
 else if currentNumber equals 7 // or elif, elseif
     output "hi 7"
 else
-    output "hi not 5 or 7"
+    output "hi not 5 or 7"x
 ```
 
 Check if `currentNumber` is greater than `5`:
@@ -445,7 +445,9 @@ Basic function definition:
 ```pscode
 function hello takes in nothing
     return "world"
-``` or ```pscode
+```
+or
+```pscode
 function hello
     return world
 ```
