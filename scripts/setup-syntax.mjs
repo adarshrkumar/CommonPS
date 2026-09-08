@@ -8,11 +8,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
 
-const REPO_URL = 'https://github.com/adarshrkumar/pscode-syntax-highlighter';
+const REPO_URL = 'https://github.com/adarshrkumar/commonps-syntax-highlighter';
 const TEMP_DIR = join(projectRoot, '.tmp-syntax');
 const LANG_DIR = join(projectRoot, 'lang');
 
-console.log('Setting up pscode syntax highlighting...');
+console.log('Setting up commonps syntax highlighting...');
 
 try {
     // Remove existing temp directory if it exists

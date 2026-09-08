@@ -16,14 +16,14 @@ Functions allow you to organize code into reusable blocks that can be called fro
 
 A function that returns a value:
 
-```pscode
+```commonps
 function hello takes in nothing
     return "world"
 ```
 
 Or simply:
 
-```pscode
+```commonps
 function hello
     return "world"
 ```
@@ -32,16 +32,16 @@ function hello
 
 ### Single Parameter
 
-```pscode
-function square takes in number
-    return number * number
+```commonps
+function square takes in num
+    return num * num
 
 result = square(5)  // Returns 25
 ```
 
 ### Multiple Parameters
 
-```pscode
+```commonps
 function add takes in num1 and num2
     return num1 + num2
 
@@ -50,7 +50,7 @@ sum = add(10, 20)  // Returns 30
 
 ### Three or More Parameters
 
-```pscode
+```commonps
 function calculateVolume takes in length and width and height
     volume = length * width * height
     return volume
@@ -62,19 +62,19 @@ volume = calculateVolume(5, 3, 2)  // Returns 30
 
 ### Standard Syntax
 
-```pscode
+```commonps
 result = functionName(arg1, arg2)
 ```
 
 ### Natural Language Syntax
 
-```pscode
+```commonps
 result = run functionName with arg1 and arg2
 ```
 
 ### Example
 
-```pscode
+```commonps
 function multiply takes in a and b
     return a * b
 
@@ -87,7 +87,7 @@ result2 = run multiply with 5 and 3
 
 Functions that perform actions but don't return a value:
 
-```pscode
+```commonps
 function printGreeting takes in name {
     output "Hello, {name}!"
     output "Welcome to the program!"
@@ -104,7 +104,7 @@ printGreeting("Alice")
 
 Functions can return values using the `return` keyword:
 
-```pscode
+```commonps
 function isAdult takes in age {
     if age >= 18
         return true
@@ -125,7 +125,7 @@ function getGrade takes in score
 
 ## Simple Example
 
-```pscode
+```commonps
 function calculateArea takes in width and height
     return width * height
 

@@ -15,7 +15,7 @@ Common Pseudocode works like JavaScript, where each new line is treated as a sta
 
 Let's start with a simple "Hello World" program:
 
-```pscode
+```commonps
 output "Hello, World!"
 ```
 
@@ -27,14 +27,14 @@ Comments help document your code and are ignored during execution.
 
 **Single-line comments:**
 
-```pscode
+```commonps
 // This is a single-line comment
 x = 5  // This is an inline comment
 ```
 
 **Multi-line comments:**
 
-```pscode
+```commonps
 /*
     This is a multi-line comment
     that spans multiple lines
@@ -46,20 +46,20 @@ x = 10
 
 Declare a variable without an initial value:
 
-```pscode
+```commonps
 define variableName
 ```
 
 Assign a value to a variable:
 
-```pscode
+```commonps
 newNumber = 7
 currentNumber = newNumber
 ```
 
 Example with `define`:
 
-```pscode
+```commonps
 define counter
 define userName
 define isValid
@@ -75,7 +75,7 @@ Common Pseudocode supports several basic data types:
 
 ### Numbers
 
-```pscode
+```commonps
 age = 25
 price = 19.99
 ```
@@ -84,7 +84,7 @@ price = 19.99
 
 Strings can be enclosed in single quotes, double quotes, or backticks:
 
-```pscode
+```commonps
 name = "John"
 greeting = 'Hello'
 message = `Welcome!`
@@ -92,7 +92,7 @@ message = `Welcome!`
 
 **Multi-line strings:**
 
-```pscode
+```commonps
 `
 This is a multiline string
 that spans multiple lines
@@ -101,7 +101,7 @@ that spans multiple lines
 
 Or using triple quotes:
 
-```pscode
+```commonps
 """
 This is also a multiline string
 """
@@ -109,7 +109,7 @@ This is also a multiline string
 
 ### Booleans
 
-```pscode
+```commonps
 isActive = true
 isComplete = false
 ```
@@ -120,7 +120,7 @@ Note: `true`, `True`, and `TRUE` are all valid (same for `false`).
 
 Convert between types when needed:
 
-```pscode
+```commonps
 stringValue = "123"
 numValue = convert stringValue to number  // or number(stringValue)
 stringFromNum = convert age to string     // or string(age)
@@ -130,20 +130,20 @@ stringFromNum = convert age to string     // or string(age)
 
 **Reading user input:**
 
-```pscode
+```commonps
 input userInput
 ```
 
 **Prompting for input:**
 
-```pscode
+```commonps
 output "Please enter your name: "
 input userName
 ```
 
 **Displaying output:**
 
-```pscode
+```commonps
 output "Hello, " userName "!"
 ```
 
@@ -151,7 +151,7 @@ output "Hello, " userName "!"
 
 Define values that cannot be changed:
 
-```pscode
+```commonps
 constant PI = 3.14159
 constant MAX_USERS = 100
 ```
@@ -160,7 +160,7 @@ constant MAX_USERS = 100
 
 ### Arithmetic Operators
 
-```pscode
+```commonps
 sum = 1 + 1        // Addition
 diff = 10 - 5      // Subtraction
 product = 3 * 4    // Multiplication
@@ -171,7 +171,7 @@ remainder = 10 % 3 // Modulus (also "modulus" or "remainder after")
 
 ### String Concatenation
 
-```pscode
+```commonps
 greeting = "Hello" " " "World"  // Results in "Hello World"
 num = 10
 message = "The number is {num}" // Results in "The number is 10"
@@ -179,7 +179,7 @@ message = "The number is {num}" // Results in "The number is 10"
 
 ### Compound Assignments
 
-```pscode
+```commonps
 num = 5
 num++          // Same as num = num + 1
 num *= 3       // Same as num = num * 3

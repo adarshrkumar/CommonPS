@@ -9,14 +9,14 @@ Arrays (also called lists) store multiple values in a single variable. They're o
 
 ### Empty Array
 
-```pscode
+```commonps
 numbers = []
 names = array()
 ```
 
 ### Array with Initial Values
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 4, 5]
 fruits = ["apple", "banana", "orange"]
 mixed = [1, "hello", true, 3.14]
@@ -26,7 +26,7 @@ mixed = [1, "hello", true, 3.14]
 
 Arrays use zero-based indexing (the first element is at index 0):
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 
 firstFruit = fruits[0]   // "apple"
@@ -38,7 +38,7 @@ thirdFruit = fruits[2]   // "orange"
 
 Change an element by assigning to its index:
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 fruits[1] = "grape"
 // fruits is now ["apple", "grape", "orange"]
@@ -48,7 +48,7 @@ fruits[1] = "grape"
 
 Get the number of elements in an array:
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 4, 5]
 count = length of numbers  // 5
 // or
@@ -59,7 +59,7 @@ count = numbers.length     // 5
 
 ### Append to End
 
-```pscode
+```commonps
 numbers = [1, 2, 3]
 append 4 to numbers
 // or
@@ -71,7 +71,7 @@ numbers.push(4)
 
 ### Insert at Specific Position
 
-```pscode
+```commonps
 fruits = ["apple", "orange"]
 insert "banana" at index 1 in fruits
 // or
@@ -83,7 +83,7 @@ fruits.insert(1, "banana")
 
 ### Remove by Index
 
-```pscode
+```commonps
 numbers = [10, 20, 30, 40]
 remove element at index 2 from numbers
 // or
@@ -93,7 +93,7 @@ numbers.remove(2)
 
 ## Checking for Elements
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 
 if "apple" is in fruits
@@ -109,7 +109,7 @@ else
 
 ### For Each Loop
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 
 for each fruit in fruits
@@ -118,7 +118,7 @@ for each fruit in fruits
 
 ### Index-Based Loop
 
-```pscode
+```commonps
 numbers = [10, 20, 30, 40, 50]
 
 for i from 0 to length of numbers - 1
@@ -127,7 +127,7 @@ for i from 0 to length of numbers - 1
 
 ### While Loop
 
-```pscode
+```commonps
 colors = ["red", "green", "blue"]
 i = 0
 
@@ -141,7 +141,7 @@ while i < length of colors {
 
 ### Ascending Order
 
-```pscode
+```commonps
 numbers = [5, 2, 8, 1, 9]
 sort numbers in ascending order
 // or
@@ -151,7 +151,7 @@ numbers.sort()
 
 ### Descending Order
 
-```pscode
+```commonps
 numbers = [5, 2, 8, 1, 9]
 sort numbers in descending order
 // or
@@ -165,7 +165,7 @@ Arrays can contain other arrays, creating multi-dimensional structures.
 
 ### 2D Array (Matrix)
 
-```pscode
+```commonps
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 // Access elements
@@ -174,7 +174,7 @@ value = grid[1][2]  // Gets 6 (row 1, column 2)
 
 ### Creating a 2D Array
 
-```pscode
+```commonps
 // Tic-tac-toe board
 board = [
     ["X", "O", "X"],
@@ -185,7 +185,7 @@ board = [
 
 ### Iterating Through 2D Arrays
 
-```pscode
+```commonps
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 for each row in grid {
@@ -197,7 +197,7 @@ for each row in grid {
 
 Or with indices:
 
-```pscode
+```commonps
 for i from 0 to length of grid - 1 {
     for j from 0 to length of grid[i] - 1
         output grid[i][j] " "
@@ -209,7 +209,7 @@ for i from 0 to length of grid - 1 {
 
 ### Sum of Array
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 4, 5]
 sum = 0
 
@@ -221,7 +221,7 @@ output "Sum: {sum}"  // Sum: 15
 
 ### Find Maximum
 
-```pscode
+```commonps
 numbers = [23, 45, 12, 67, 34]
 
 max = numbers[0]
@@ -234,7 +234,7 @@ output "Maximum: {max}"
 
 ### Find Minimum
 
-```pscode
+```commonps
 numbers = [23, 45, 12, 67, 34]
 
 min = numbers[0]
@@ -247,7 +247,7 @@ output "Minimum: {min}"
 
 ### Count Occurrences
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 2, 1, 2, 4, 2]
 target = 2
 count = 0
@@ -261,7 +261,7 @@ output "{target} appears {count} times"
 
 ### Reverse Array
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 4, 5]
 reversed = []
 

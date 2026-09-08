@@ -12,14 +12,14 @@ Indentation is done Python style, but without the need for the `:` at the end of
 
 Single line comment:
 
-```pscode
+```commonps
 // This is a single-line comment
 x = 5  // This is an inline comment
 ```
 
 Multi-line comment:
 
-```pscode
+```commonps
 /*
     This is a multi-line comment
     that spans multiple lines
@@ -34,7 +34,7 @@ Read in a user input to the variable `userInput`:
 
 Read in a user input to the variable `outputInput` following an output of `Please enter an input`:
 
-```pscode
+```commonps
 output "Please enter an output: "
 input outputInput
 ```
@@ -46,7 +46,7 @@ input outputInput
 
 Explicitly declare variable types (optional in most pseudocode):
 
-```pscode
+```commonps
 number age = 25
 string name = "John"
 number price = 19.99
@@ -56,7 +56,7 @@ array numbers = [1, 2, 3]
 
 Type conversion:
 
-```pscode
+```commonps
 stringValue = "123"
 numValue = convert stringValue to number  // or number(stringValue)
 stringFromNum = convert age to string  // or string(age)
@@ -75,7 +75,7 @@ Assign the variable `currentNumber` to `newNumber`:
 
 Example with `define`:
 
-```pscode
+```commonps
 define counter
 define userName
 define isValid
@@ -89,7 +89,7 @@ isValid = true
 
 Define a constant (value cannot be changed):
 
-```pscode
+```commonps
 constant PI = 3.14159
 constant MAX_USERS = 100
 ```
@@ -98,13 +98,13 @@ constant MAX_USERS = 100
 
 `"This is a string"`, `'This is also a string'`, ``` `This yet again, is a string` ```
 
-```pscode
+```commonps
 `
 This is a multiline string
 `
 ```
 
-```pscode
+```commonps
 """
 This is also a multiline string
 """
@@ -130,11 +130,15 @@ Advanced operator usage:
 `num = num * age` = `num*=age`
 `num = num ^ 1000` = `num^=1000`
 
-```pscode
+```commonps
 num = 8
 ans = num/3
 num = num % 3
-``` = ```pscode
+```
+
+=
+
+```commonps
 num = 8
 ans = num/3
 num%=3
@@ -161,7 +165,7 @@ Less than or equal to: `x is less than or equal to y` or `x <= y`
 
 Example:
 
-```pscode
+```commonps
 if age >= 18
     output "You are an adult"
 else
@@ -176,7 +180,7 @@ NOT: `NOT condition` or `not condition` or `!condition`
 
 Examples:
 
-```pscode
+```commonps
 if age >= 18 AND age < 65
     output "You are a working-age adult"
 
@@ -191,7 +195,7 @@ if NOT isLoggedIn
 
 Check if `currentNumber` is equal to `5`, if so print `hi 5`, if not check if it is equal to `7`, if so print `hi 7`, if not print `hi not 5 or 7`:
 
-```pscode
+```commonps
 if currentNumber equals 5 // or if currentNumber is equal to 5
     output "hi 5"
 else if currentNumber equals 7 // or elif, elseif
@@ -202,21 +206,21 @@ else
 
 Check if `currentNumber` is greater than `5`:
 
-```pscode
+```commonps
 if currentNumber is greater than 5
     output "hi 5"
 ```
 
 Check if `currentNumber` is less than or equal to `7`:
 
-```pscode
+```commonps
 if currentNumber is less than or equal to 7
     output "hi 7"
 ```
 
 Take a user's input for a desired menu option, check for each case, and print out that number (switch):
 
-```pscode
+```commonps
 /*
     Output:
 
@@ -273,7 +277,7 @@ switch userOption
 
 Basic loop:
 
-```pscode
+```commonps
 loop from 1 to 10 using i {
     output i
     output ""
@@ -282,7 +286,7 @@ loop from 1 to 10 using i {
 
 While loop:
 
-```pscode
+```commonps
 i = 0
 while i is less than or equal to 10
     i = i+1 // or i++
@@ -290,14 +294,14 @@ while i is less than or equal to 10
 
 For loop:
 
-```pscode
+```commonps
 for all the integers between 1 and 10 using i:
     output "Haha " i " love you!"
 ```
 
 Do-While loop (executes at least once):
 
-```pscode
+```commonps
 do {
     output "Enter a positive number: "
     input num
@@ -306,7 +310,7 @@ do {
 
 Repeat-Until loop (executes until condition is true):
 
-```pscode
+```commonps
 repeat {
     output "Enter password: "
     input password
@@ -317,7 +321,7 @@ repeat {
 
 Break out of the loop early:
 
-```pscode
+```commonps
 for i from 1 to 100 {
     if i == 50 {
         jump  // or break
@@ -328,7 +332,7 @@ for i from 1 to 100 {
 
 Skip to next iteration:
 
-```pscode
+```commonps
 for i from 1 to 10 {
     if i % 2 == 0 {
         skip  // or continue
@@ -341,77 +345,77 @@ for i from 1 to 10 {
 
 Declare an empty array:
 
-```pscode
+```commonps
 numbers = []
 names = array()
 ```
 
 Declare an array with initial values:
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 4, 5]
 fruits = ["apple", "banana", "orange"]
 ```
 
 Access array element (0-indexed):
 
-```pscode
+```commonps
 firstFruit = fruits[0]  // "apple"
 thirdNumber = numbers[2]  // 3
 ```
 
 Modify array element:
 
-```pscode
+```commonps
 fruits[1] = "grape"  // changes "banana" to "grape"
 ```
 
 Array length:
 
-```pscode
+```commonps
 count = length of numbers  // or count = numbers.length
 ```
 
 Add an element to the end of an array:
 
-```pscode
+```commonps
 append 6 to numbers  // or numbers.append(6) or numbers.push(6)
 ```
 
 Remove element from array:
 
-```pscode
+```commonps
 remove element at index `2` from numbers  // or numbers.remove(2)
 ```
 
 Insert element at specific position:
 
-```pscode
+```commonps
 insert "pear" at index `1` in fruits  // or fruits.insert(1, "pear")
 ```
 
 Check if element exists in array:
 
-```pscode
+```commonps
 if "apple" is in fruits
     output "We have apples!"
 ```
 
 Loop through array:
 
-```pscode
+```commonps
 for each fruit in fruits
     output fruit
 ```
 
-```pscode
+```commonps
 for i from 0 to length of numbers - 1
     output numbers[i]
 ```
 
 Sort array:
 
-```pscode
+```commonps
 sort numbers in ascending order  // or numbers.sort()
 sort fruits in descending order  // or fruits.sort(descending)
 ```
@@ -420,19 +424,19 @@ sort fruits in descending order  // or fruits.sort(descending)
 
 Declare a 2D array:
 
-```pscode
+```commonps
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 ```
 
 Access 2D array element:
 
-```pscode
+```commonps
 value = grid[1][2]  // gets 6 (row 1, column 2)
 ```
 
 Loop through 2D array:
 
-```pscode
+```commonps
 for each row in grid
     for each value in row
         output value
@@ -442,33 +446,33 @@ for each row in grid
 
 Basic function definition:
 
-```pscode
+```commonps
 function hello takes in nothing
     return "world"
 ```
 or
-```pscode
+```commonps
 function hello
     return world
 ```
 
 Simple addition function:
 
-```pscode
+```commonps
 function add takes in num1 and num2
     return num1 + num2
 ```
 
 Function with no return value (procedure):
 
-```pscode
+```commonps
 function printGreeting takes in name
     output "Hello, " name "!"
 ```
 
 Calling a function:
 
-```pscode
+```commonps
 result = add(5, 3)  // or result = run add with 5 and 3
 output result  // outputs 8
 
@@ -477,7 +481,7 @@ printGreeting("Alice")  // or run printGreeting with "Alice"
 
 Alternative function calling syntax:
 
-```pscode
+```commonps
 sum = run add with 10 and 20
 run printGreeting with "Bob"
 ```
@@ -486,7 +490,7 @@ run printGreeting with "Bob"
 
 Define a record/structure:
 
-```pscode
+```commonps
 record Person
     string name
     number age
@@ -495,7 +499,7 @@ record Person
 
 Create and use a record:
 
-```pscode
+```commonps
 person1 = new Person
 person1.name = "Alice"
 person1.age = 30
@@ -506,13 +510,13 @@ output person1.name  // "Alice"
 
 Or with initialization:
 
-```pscode
+```commonps
 person2 = Person("Bob", 25, "bob@example.com")
 ```
 
 Array of records:
 
-```pscode
+```commonps
 people = [
     Person("Alice", 30, "alice@example.com"),
     Person("Bob", 25, "bob@example.com")
@@ -526,7 +530,7 @@ for each person in people
 
 #### Math Functions
 
-```pscode
+```commonps
 absolute = abs of -5  // or abs(-5)  // 5
 rounded = round 3.7  // or round(3.7)  // 4
 roundedDown = floor 3.7  // or floor(3.7)  // 3
@@ -540,7 +544,7 @@ randomInt = random integer from 1 to 10  // random int in range
 
 #### String Functions
 
-```pscode
+```commonps
 text = "Hello World"
 textLength = length of text  // or text.length  // 11
 uppercase = text to uppercase  // "HELLO WORLD"
@@ -560,7 +564,7 @@ contains = text contains "World"  // returns true
 
 #### Type Checking
 
-```pscode
+```commonps
 isNum = is number(value)  // or run is number with value
 isString = is string(value)  // or run is string with value
 isBoolean = is boolean(value)  // or run is boolean with value
@@ -571,7 +575,7 @@ isArray = is array(value)  // or run is array with value
 
 Try-catch block:
 
-```pscode
+```commonps
 try
     result = 10 / 0
 catch error
@@ -584,7 +588,7 @@ finally
 
 Open and read from a file:
 
-```pscode
+```commonps
 open file "data.txt" for reading as fileHandle
 while not end of fileHandle
     line = read line from fileHandle
@@ -594,7 +598,7 @@ close fileHandle
 
 Write to a file:
 
-```pscode
+```commonps
 open file "output.txt" for writing as fileHandle
 write "Hello, World!" to fileHandle
 close fileHandle
@@ -602,7 +606,7 @@ close fileHandle
 
 Append to a file:
 
-```pscode
+```commonps
 open file "log.txt" for appending as fileHandle
 write "New log entry" to fileHandle
 close fileHandle
@@ -612,7 +616,7 @@ close fileHandle
 
 #### Linear Search
 
-```pscode
+```commonps
 function linearSearch takes in array and target {
     for i from 0 to length of array - 1 {
         if array[i] equals target {
@@ -625,7 +629,7 @@ function linearSearch takes in array and target {
 
 #### Binary Search (on sorted array)
 
-```pscode
+```commonps
 function binarySearch takes in array and target {
     left = 0
     right = length of array - 1
@@ -648,7 +652,7 @@ function binarySearch takes in array and target {
 
 #### Bubble Sort
 
-```pscode
+```commonps
 function bubbleSort takes in array {
     n = length of array
 
@@ -669,7 +673,7 @@ function bubbleSort takes in array {
 
 #### Find Maximum in Array
 
-```pscode
+```commonps
 function findMax takes in array {
     if length of array equals 0 {
         return null

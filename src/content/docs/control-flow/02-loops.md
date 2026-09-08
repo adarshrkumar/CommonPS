@@ -9,7 +9,7 @@ Loops allow you to repeat code multiple times, which is essential for many progr
 
 The simplest way to repeat code a specific number of times:
 
-```pscode
+```commonps
 loop from 1 to 10 using i {
     output i
     output ""
@@ -22,7 +22,7 @@ This prints numbers 1 through 10.
 
 Create a loop that runs forever until explicitly stopped with `jump` or `break`:
 
-```pscode
+```commonps
 loop {
     output "Enter a command (type 'quit' to exit): "
     input command
@@ -38,7 +38,7 @@ This creates an infinite loop that must be broken out of using loop control stat
 
 ### Infinite Loop Example
 
-```pscode
+```commonps
 count = 0
 
 loop {
@@ -56,7 +56,7 @@ output "Done!"
 
 Iterate through a range of values:
 
-```pscode
+```commonps
 for all the integers between 1 and 10 using i
     output "Number: {i}"
 ```
@@ -65,7 +65,7 @@ for all the integers between 1 and 10 using i
 
 Iterate through array elements:
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 
 for each fruit in fruits
@@ -76,7 +76,7 @@ for each fruit in fruits
 
 Repeat while a condition is true:
 
-```pscode
+```commonps
 i = 1
 while i is less than or equal to 10 {
     output i
@@ -88,7 +88,7 @@ The condition is checked **before** each iteration.
 
 ### While Loop Example
 
-```pscode
+```commonps
 count = 0
 while count < 5 {
     output "Count: {count}"
@@ -100,7 +100,7 @@ while count < 5 {
 
 Execute code at least once, then repeat while a condition is true:
 
-```pscode
+```commonps
 do {
     output "Enter a positive number: "
     input num
@@ -111,7 +111,7 @@ The condition is checked **after** each iteration, so the code runs at least onc
 
 ### Do-While Example
 
-```pscode
+```commonps
 attempts = 0
 do {
     output "Enter password: "
@@ -124,7 +124,7 @@ do {
 
 Repeat until a condition becomes true:
 
-```pscode
+```commonps
 repeat {
     output "Enter 'quit' to exit: "
     input command
@@ -135,7 +135,7 @@ This is the opposite of `while` - it continues until the condition is true.
 
 ### Repeat-Until Example
 
-```pscode
+```commonps
 sum = 0
 count = 1
 
@@ -153,7 +153,7 @@ output "Sum of 1 to 100: {sum}"
 
 Exit a loop early:
 
-```pscode
+```commonps
 for i from 1 to 100 {
     if i == 50
         jump  // or break
@@ -167,7 +167,7 @@ This loop stops when `i` reaches 50.
 
 Skip to the next iteration:
 
-```pscode
+```commonps
 for i from 1 to 10 {
     if i % 2 == 0
         skip  // or continue
@@ -177,7 +177,7 @@ for i from 1 to 10 {
 
 ### Example: Finding a Value
 
-```pscode
+```commonps
 numbers = [3, 7, 12, 19, 24, 31]
 target = 19
 found = false
@@ -198,7 +198,7 @@ if NOT found
 
 Loops inside loops:
 
-```pscode
+```commonps
 // Multiplication table
 for i from 1 to 5 {
     for j from 1 to 5 {
@@ -211,7 +211,7 @@ for i from 1 to 5 {
 
 ### 2D Array Iteration
 
-```pscode
+```commonps
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 for each row in grid {
@@ -225,7 +225,7 @@ for each row in grid {
 
 ### Countdown
 
-```pscode
+```commonps
 count = 10
 while count > 0 {
     output count
@@ -236,7 +236,7 @@ output "Blast off!"
 
 ### Sum of Numbers
 
-```pscode
+```commonps
 sum = 0
 for i from 1 to 100
     sum += i
@@ -245,7 +245,7 @@ output "Sum of 1 to 100: {sum}"
 
 ### Input Validation
 
-```pscode
+```commonps
 valid = false
 
 while NOT valid {
@@ -262,7 +262,7 @@ while NOT valid {
 
 ### Search and Exit
 
-```pscode
+```commonps
 names = ["Alice", "Bob", "Charlie", "David"]
 searchName = "Charlie"
 

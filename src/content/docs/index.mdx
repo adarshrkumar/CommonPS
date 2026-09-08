@@ -3,46 +3,46 @@ title: Welcome to Common Pseudocode
 description: A simple, readable pseudocode language for learning and teaching programming concepts
 template: splash
 hero:
-  tagline: A simple, readable pseudocode language for learning and teaching programming concepts
-  image:
-    file: ../../assets/logo_rounded.png
-  actions:
-    - text: Get Started
-      link: /getting-started/
-      icon: right-arrow
-      variant: primary
-    - text: View on GitHub
-      link: https://github.com/adarshrkumar/CommonPS
-      icon: github
-    - text: Install VS Code Extension
-      link: https://marketplace.visualstudio.com/items?itemName=adarshrkumar.pscode
-      icon: vscode
+    tagline: A simple, readable pseudocode language for learning and teaching programming concepts
+    image:
+        file: ../../assets/logo_rounded.png
+    actions:
+        - text: Get Started
+        link: /getting-started/
+        icon: right-arrow
+        variant: primary
+        - text: View on GitHub
+        link: https://github.com/adarshrkumar/CommonPS
+        icon: github
+        - text: Install VS Code Extension
+        link: https://marketplace.visualstudio.com/items?itemName=adarshrkumar.pscode
+        icon: vscode
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
 ## What is Common Pseudocode?
 
 Common Pseudocode is a friendly pseudocode language designed to make learning programming concepts easy and intuitive. It combines familiar syntax from popular languages with natural language readability.
 
 <CardGrid>
-  <Card title="Easy to Learn" icon="open-book">
-    Works like JavaScript with Python-style indentation. Multiple syntax styles supported for the same operations.
-  </Card>
-  <Card title="Natural Language" icon="pencil">
-    Write `if age is greater than 18` or `if age > 18` - both work!
-  </Card>
-  <Card title="Rich Features" icon="puzzle">
-    Supports functions, arrays, records, loops, and all essential programming constructs.
-  </Card>
-  <Card title="VSCode Extension" icon="vscode">
-    Syntax highlighting available through our [VSCode extension](https://github.com/adarshrkumar/pscode-syntax-highlighter).
-  </Card>
+    <Card title="Easy to Learn" icon="open-book">
+        Works like JavaScript with Python-style indentation. Multiple syntax styles supported for the same operations.
+    </Card>
+    <Card title="Natural Language" icon="pencil">
+        Write `if age is greater than 18` or `if age > 18` - both work!
+    </Card>
+    <Card title="Rich Features" icon="puzzle">
+        Supports functions, arrays, records, loops, and all essential programming constructs.
+    </Card>
+    <Card title="VSCode Extension" icon="vscode">
+        Syntax highlighting available through our [VSCode extension](https://github.com/adarshrkumar/commonps-syntax-highlighter).
+    </Card>
 </CardGrid>
 
 ## Quick Example
 
-```pscode
+```commonps
 // Calculate factorial
 function factorial takes in n
     if n is less than or equal to 1

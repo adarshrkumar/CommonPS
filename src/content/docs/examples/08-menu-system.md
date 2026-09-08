@@ -7,7 +7,7 @@ Menu systems provide a user-friendly interface for interactive programs. This ex
 
 ## Basic Menu System
 
-```pscode
+```commonps
 function displayMenu {
     output "===== Main Menu ====="
     output "1. Option One"
@@ -51,7 +51,7 @@ while running {
 
 ## Complete Calculator Menu
 
-```pscode
+```commonps
 function displayMenu {
     output ""
     output "===== Calculator ====="
@@ -134,7 +134,7 @@ while running {
 
 ## Student Management System
 
-```pscode
+```commonps
 // Global data
 students = []
 grades = []
@@ -320,7 +320,7 @@ while running {
 
 ## Library Book System
 
-```pscode
+```commonps
 // Book database
 bookTitles = ["1984", "Brave New World", "Fahrenheit 451"]
 bookAuthors = ["George Orwell", "Aldous Huxley", "Ray Bradbury"]
@@ -526,7 +526,7 @@ while running {
 
 ## Nested Menu Example
 
-```pscode
+```commonps
 function mainMenu {
     output "=== Main Menu ==="
     output "1. Settings"

@@ -9,14 +9,14 @@ User-defined functions allow you to organize code into reusable blocks, making y
 
 A function that returns a value:
 
-```pscode
+```commonps
 function hello takes in nothing
     return "world"
 ```
 
 Or simply:
 
-```pscode
+```commonps
 function hello
     return "world"
 ```
@@ -25,16 +25,16 @@ function hello
 
 ### Single Parameter
 
-```pscode
-function square takes in number
-    return number * number
+```commonps
+function square takes in num
+    return num * num
 
 result = square(5)  // Returns 25
 ```
 
 ### Multiple Parameters
 
-```pscode
+```commonps
 function add takes in num1 and num2
     return num1 + num2
 
@@ -43,7 +43,7 @@ sum = add(10, 20)  // Returns 30
 
 ### Three or More Parameters
 
-```pscode
+```commonps
 function calculateVolume takes in length and width and height
     volume = length * width * height
     return volume
@@ -55,19 +55,19 @@ volume = calculateVolume(5, 3, 2)  // Returns 30
 
 ### Standard Syntax
 
-```pscode
+```commonps
 result = functionName(arg1, arg2)
 ```
 
 ### Natural Language Syntax
 
-```pscode
+```commonps
 result = run functionName with arg1 and arg2
 ```
 
 ### Example
 
-```pscode
+```commonps
 function multiply takes in a and b
     return a * b
 
@@ -80,7 +80,7 @@ result2 = run multiply with 5 and 3
 
 Functions that perform actions but don't return a value:
 
-```pscode
+```commonps
 function printGreeting takes in name {
     output "Hello, {name}!"
     output "Welcome to the program!"
@@ -99,7 +99,7 @@ printGreeting("Alice")
 
 Exit a function before reaching the end:
 
-```pscode
+```commonps
 function isAdult takes in age {
     if age >= 18
         return true
@@ -117,7 +117,7 @@ function isAdult takes in age {
 
 ### Multiple Return Points
 
-```pscode
+```commonps
 function getGrade takes in score
     if score >= 90
         return "A"
@@ -134,7 +134,7 @@ function getGrade takes in score
 
 Return an array with multiple values:
 
-```pscode
+```commonps
 function divideWithRemainder takes in dividend and divisor {
     quotient = floor(dividend / divisor)
     remainder = dividend % divisor
@@ -150,7 +150,7 @@ output "Remainder: {result[1]}"   // 2
 
 ### Temperature Converter
 
-```pscode
+```commonps
 function celsiusToFahrenheit takes in celsius
     fahrenheit = (celsius * 9/5) + 32
     return fahrenheit
@@ -169,7 +169,7 @@ output "77°F = {temp2}°C"
 
 ### Circle Calculations
 
-```pscode
+```commonps
 constant PI = 3.14159
 
 function circleArea takes in radius
@@ -191,7 +191,7 @@ output "Diameter: {circleDiameter(radius)}"
 
 ### String Utilities
 
-```pscode
+```commonps
 function reverse takes in text {
     reversed = ""
     for i from length of text - 1 to 0
@@ -224,7 +224,7 @@ output "Vowel count: {countVowels(word)}"
 
 ### Array Operations
 
-```pscode
+```commonps
 function sum takes in array {
     total = 0
     for each value in array
@@ -269,7 +269,7 @@ output "Min: {minimum(numbers)}"
 
 ### Validation Functions
 
-```pscode
+```commonps
 function isValidEmail takes in email {
     if length of email < 3
         return false
@@ -309,7 +309,7 @@ Functions that call themselves:
 
 ### Factorial
 
-```pscode
+```commonps
 function factorial takes in n
     if n <= 1
         return 1
@@ -321,7 +321,7 @@ output "5! = {factorial(5)}"  // 120
 
 ### Fibonacci Sequence
 
-```pscode
+```commonps
 function fibonacci takes in n
     if n <= 1
         return n
@@ -333,7 +333,7 @@ output "Fibonacci(10) = {fibonacci(10)}"  // 55
 
 ### Power Function
 
-```pscode
+```commonps
 function power takes in base and exponent
     if exponent equals 0
         return 1
@@ -347,7 +347,7 @@ output "2^8 = {power(2, 8)}"  // 256
 
 ### Countdown
 
-```pscode
+```commonps
 function countdown takes in n {
     if n <= 0 {
         output "Blast off!"
@@ -372,7 +372,7 @@ countdown(5)
 
 While Common Pseudocode doesn't have default parameters, you can handle missing values:
 
-```pscode
+```commonps
 function greet takes in name and greeting {
     if greeting equals null OR greeting equals ""
         greeting = "Hello"
@@ -389,7 +389,7 @@ greet("Bob", "")            // Hello, Bob!
 
 Functions that work with other functions:
 
-```pscode
+```commonps
 function applyOperation takes in array and operation {
     result = []
     for each value in array {
@@ -415,7 +415,7 @@ squared = applyOperation(numbers, square)
 
 Break complex tasks into smaller functions:
 
-```pscode
+```commonps
 function isLeapYear takes in year {
     if year % 4 != 0
         return false
@@ -464,7 +464,7 @@ else
 
 Add comments to explain what functions do:
 
-```pscode
+```commonps
 // Calculates the area of a triangle using base and height
 // Parameters:
 //   base: the length of the triangle's base
@@ -491,7 +491,7 @@ function isPrime takes in n {
 
 ## Complete Example: Student Grade System
 
-```pscode
+```commonps
 function calculateAverage takes in grades {
     if length of grades equals 0
         return 0
@@ -546,7 +546,7 @@ else
 
 ### 1. One Purpose Per Function
 
-```pscode
+```commonps
 // Bad - does too much
 function processUserAndSendEmail takes in user {
     validateUser(user)
@@ -568,7 +568,7 @@ function sendWelcomeEmail takes in user
 
 ### 2. Use Descriptive Names
 
-```pscode
+```commonps
 // Bad
 function calc takes in x and y
     return x * y
@@ -580,7 +580,7 @@ function calculateRectangleArea takes in width and height
 
 ### 3. Keep Functions Short
 
-```pscode
+```commonps
 // A function should do one thing well
 // If it's too long, break it into smaller functions
 function processOrder takes in order {
@@ -594,7 +594,7 @@ function processOrder takes in order {
 
 ### 4. Avoid Side Effects
 
-```pscode
+```commonps
 // Bad - modifies global variable
 total = 0
 function add takes in value
@@ -609,7 +609,7 @@ total = add(total, 5)
 
 ### 5. Validate Parameters
 
-```pscode
+```commonps
 function divide takes in numerator and denominator {
     if denominator equals 0 {
         output "Error: Division by zero"
@@ -622,7 +622,7 @@ function divide takes in numerator and denominator {
 
 ### 6. Return Early
 
-```pscode
+```commonps
 function processValue takes in value {
     // Check invalid cases first
     if value equals null
@@ -640,7 +640,7 @@ function processValue takes in value {
 
 Variables declared inside functions are local to that function:
 
-```pscode
+```commonps
 globalVar = 10
 
 function testScope takes in param {
@@ -660,7 +660,7 @@ testScope(5)
 
 ### 1. Forgetting to Return a Value
 
-```pscode
+```commonps
 // Bad - no return statement
 function add takes in a and b
     sum = a + b
@@ -673,7 +673,7 @@ function add takes in a and b
 
 ### 2. Modifying Parameters Unintentionally
 
-```pscode
+```commonps
 // Be careful with arrays and objects
 function clearArray takes in arr {
     arr = []  // This doesn't clear the original array!
@@ -688,7 +688,7 @@ function clearArray takes in arr {
 
 ### 3. Recursive Functions Without Base Cases
 
-```pscode
+```commonps
 // Bad - infinite recursion!
 function badRecursion takes in n
     return badRecursion(n - 1)
@@ -710,7 +710,7 @@ Create a function when:
 4. **Testing** - Isolated functions are easier to test
 5. **Readability** - Named functions make code self-documenting
 
-```pscode
+```commonps
 // Instead of repeating this:
 if username equals "" OR length of username < 3
     output "Invalid username"

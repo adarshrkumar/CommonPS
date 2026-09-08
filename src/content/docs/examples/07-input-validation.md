@@ -9,7 +9,7 @@ Input validation ensures that user-provided data meets expected criteria before 
 
 ### Validate Numeric Input
 
-```pscode
+```commonps
 function getValidNumber takes in prompt and min and max
     valid = false
     value = 0
@@ -37,7 +37,7 @@ output "Age accepted: {age}"
 
 ### Validate String Input
 
-```pscode
+```commonps
 function getValidString takes in prompt and minLength and maxLength
     valid = false
     text = ""
@@ -65,7 +65,7 @@ output "Name accepted: {name}"
 
 ### Validate Yes/No Input
 
-```pscode
+```commonps
 function getYesNo takes in prompt
     valid = false
     answer = false
@@ -99,7 +99,7 @@ else
 
 ### Validate Email Format
 
-```pscode
+```commonps
 function isValidEmail takes in email
     // Check if email is a string
     if NOT is string(email)
@@ -157,7 +157,7 @@ output "Email accepted: {email}"
 
 ### Validate Phone Number
 
-```pscode
+```commonps
 function isValidPhone takes in phone
     if NOT is string(phone)
         return false
@@ -200,7 +200,7 @@ output "Phone accepted: {phone}"
 
 ### Validate Date Format
 
-```pscode
+```commonps
 function isValidDate takes in dateStr
     if NOT is string(dateStr)
         return false
@@ -243,7 +243,7 @@ output "Date accepted: {birthDate}"
 
 ### Validate Menu Choice
 
-```pscode
+```commonps
 function displayMenu takes in options
     output "Please select an option:"
     for i from 0 to length of options - 1
@@ -278,7 +278,7 @@ output "You selected: {menuOptions[choice - 1]}"
 
 ## Complete Registration Form Example
 
-```pscode
+```commonps
 function getValidNumber takes in prompt and min and max
     valid = false
     value = 0
@@ -391,7 +391,7 @@ else
 
 ## Password Validation
 
-```pscode
+```commonps
 function isStrongPassword takes in password
     if length of password < 8
         output "Password must be at least 8 characters"
@@ -450,7 +450,7 @@ output "Password created successfully"
 
 ## Common Validation Patterns
 
-```pscode
+```commonps
 // Range validation
 if value < min OR value > max
     output "Error: Value out of range"

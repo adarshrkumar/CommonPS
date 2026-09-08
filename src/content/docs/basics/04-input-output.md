@@ -9,7 +9,7 @@ Communication with users is essential in any program. Common Pseudocode provides
 
 Display information to the user with the `output` statement:
 
-```pscode
+```commonps
 output "Hello, World!"
 ```
 
@@ -17,7 +17,7 @@ output "Hello, World!"
 
 Display variable values:
 
-```pscode
+```commonps
 name = "Alice"
 age = 30
 output name
@@ -28,7 +28,7 @@ output age
 
 Combine text and variables:
 
-```pscode
+```commonps
 name = "Bob"
 age = 25
 output "Hello, my name is " name " and I am " age " years old"
@@ -38,7 +38,7 @@ output "Hello, my name is " name " and I am " age " years old"
 
 Embed variables directly in strings using curly braces:
 
-```pscode
+```commonps
 name = "Charlie"
 score = 95
 output "Player {name} scored {score} points!"
@@ -46,7 +46,7 @@ output "Player {name} scored {score} points!"
 
 ### Multiple Output Statements
 
-```pscode
+```commonps
 output "Welcome to the program!"
 output ""  // Empty line
 output "Please select an option:"
@@ -58,7 +58,7 @@ output "2. Exit"
 
 Read user input with the `input` statement:
 
-```pscode
+```commonps
 input userInput
 ```
 
@@ -68,7 +68,7 @@ The value entered by the user is stored in the variable `userInput`.
 
 It's good practice to tell users what to enter:
 
-```pscode
+```commonps
 output "What is your name? "
 input userName
 
@@ -78,7 +78,7 @@ input age
 
 ### Single Line Prompt and Input
 
-```pscode
+```commonps
 output "Enter your email: "
 input userEmail
 ```
@@ -87,7 +87,7 @@ input userEmail
 
 Here's a full program that uses input and output:
 
-```pscode
+```commonps
 // Greeting program
 output "=== Welcome ==="
 output ""
@@ -110,7 +110,7 @@ output "You were born around {birthYear}."
 
 Creating an interactive menu:
 
-```pscode
+```commonps
 output "Options: "
 output "1. Book a ticket"
 output "2. Cancel a ticket"
@@ -131,7 +131,7 @@ input userOption
 - When reading numbers, remember to convert string input to number if needed
 - Consider validating user input to handle errors gracefully
 
-```pscode
+```commonps
 output "Enter a number: "
 input userInput
 number = convert userInput to number

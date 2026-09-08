@@ -13,14 +13,14 @@ Checks whether a value is a number.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = is number(value)
 result = run is number with value
 ```
 
 **Example:**
 
-```pscode
+```commonps
 value1 = 42
 value2 = "hello"
 
@@ -41,14 +41,14 @@ Checks whether a value is a string.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = is string(value)
 result = run is string with value
 ```
 
 **Example:**
 
-```pscode
+```commonps
 name = "Alice"
 age = 30
 
@@ -69,14 +69,14 @@ Checks whether a value is a boolean (true or false).
 
 **Syntax:**
 
-```pscode
+```commonps
 result = is boolean(value)
 result = run is boolean with value
 ```
 
 **Example:**
 
-```pscode
+```commonps
 isActive = true
 count = 5
 
@@ -97,14 +97,14 @@ Checks whether a value is an array.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = is array(value)
 result = run is array with value
 ```
 
 **Example:**
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 4, 5]
 singleNumber = 42
 
@@ -125,7 +125,7 @@ else
 
 Type checking is particularly useful for validating user input:
 
-```pscode
+```commonps
 output "Enter your age: "
 input userInput
 
@@ -147,7 +147,7 @@ if is number(userInput) {
 
 Ensure function parameters are of the correct type:
 
-```pscode
+```commonps
 function calculateArea takes in width and height {
     if NOT is number(width) OR NOT is number(height) {
         output "Error: width and height must be numbers"
@@ -168,7 +168,7 @@ area2 = calculateArea("5", 10)   // Returns -1 with error message
 
 Check array types before processing:
 
-```pscode
+```commonps
 function sumNumbers takes in data {
     if NOT is array(data) {
         output "Error: input must be an array"
@@ -199,7 +199,7 @@ result = sumNumbers(mixed)     // Returns 9, with warnings
 
 Handle different types appropriately:
 
-```pscode
+```commonps
 function processValue takes in value {
     if is number(value)
         output "Number: {value * 2}"
@@ -229,7 +229,7 @@ processValue([1, 2, 3])    // "Array with 3 elements"
 
 Use logical operators to check multiple conditions:
 
-```pscode
+```commonps
 function validateUser takes in name and age {
     nameValid = is string(name) AND length of name > 0
     ageValid = is number(age) AND age >= 0 AND age <= 150

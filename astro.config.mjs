@@ -24,7 +24,7 @@ export default defineConfig({
             title: 'Common Pseudocode',
             social: [
                 { icon: 'github', label: 'GitHub', href: 'https://github.com/adarshrkumar/CommonPS' },
-                { icon: 'vscode', label: 'Extension', href: 'https://github.com/adarshrkumar/pscode-syntax-highlighter' },
+                { icon: 'vscode', label: 'Extension', href: 'https://github.com/adarshrkumar/commonps-syntax-highlighter' },
             ],
             expressiveCode: {
                 shiki: {
@@ -32,7 +32,7 @@ export default defineConfig({
                         {
                             ...commonpsLang,
                             name: 'commonps',
-                            aliases: ['pseudocode', 'pseudo', 'pscode'],
+                            aliases: ['pseudocode', 'pseudo', 'pscode', 'commonps'],
                         },
                     ],
                 },

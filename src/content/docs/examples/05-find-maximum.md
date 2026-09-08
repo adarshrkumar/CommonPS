@@ -17,7 +17,7 @@ The find maximum algorithm:
 
 ## Basic Implementation
 
-```pscode
+```commonps
 function findMax takes in array {
     if length of array equals 0
         return null
@@ -54,7 +54,7 @@ Result: max = 9
 
 ### Example 1: Find Maximum Number
 
-```pscode
+```commonps
 numbers = [45, 23, 78, 12, 90, 34, 67]
 
 maximum = findMax(numbers)
@@ -65,7 +65,7 @@ output "The maximum value is: {maximum}"
 
 ### Example 2: Find Highest Score
 
-```pscode
+```commonps
 testScores = [78, 92, 85, 67, 95, 88, 72]
 
 highestScore = findMax(testScores)
@@ -82,7 +82,7 @@ output "Curve: +{curve} points"
 
 ### Example 3: Find Maximum with User Input
 
-```pscode
+```commonps
 temperatures = []
 days = 7
 
@@ -104,7 +104,7 @@ output "Highest temperature: {maxTemp}°F"
 
 Return both the value and position:
 
-```pscode
+```commonps
 function findMaxWithIndex takes in array {
     if length of array equals 0
         return null
@@ -132,7 +132,7 @@ output "Max value: {result[0]} at index {result[1]}"
 
 Find all occurrences of the maximum value:
 
-```pscode
+```commonps
 function findAllMax takes in array {
     if length of array equals 0
         return []
@@ -159,7 +159,7 @@ for each index in maxIndices
 
 Find the top N values in an array:
 
-```pscode
+```commonps
 function findTopN takes in array and n {
     if length of array <= n
         return array
@@ -199,7 +199,7 @@ for each score in top3
 
 Find the maximum value in a 2D array:
 
-```pscode
+```commonps
 function findMax2D takes in grid {
     if length of grid equals 0
         return null
@@ -225,7 +225,7 @@ output "Maximum value: {maximum}"  // Output: 15
 
 Find the maximum value that meets a certain condition:
 
-```pscode
+```commonps
 function findMaxLessThan takes in array and threshold {
     max = null
     found = false
@@ -249,7 +249,7 @@ output "Largest number under 80: {maxUnder80}"  // Output: 78
 
 ## Complete Example Program
 
-```pscode
+```commonps
 function findMax takes in array {
     if length of array equals 0
         return null
@@ -321,7 +321,7 @@ output "Above average by: ${topSales - avgSales}"
 
 Finding the minimum is similar, just reverse the comparison:
 
-```pscode
+```commonps
 function findMin takes in array {
     if length of array equals 0
         return null
@@ -340,7 +340,7 @@ function findMin takes in array {
 
 Find the difference between maximum and minimum:
 
-```pscode
+```commonps
 function findRange takes in array {
     if length of array equals 0
         return 0
@@ -361,7 +361,7 @@ output "Range: {range}"  // Output: 55 (67 - 12)
 
 Find the second-largest value:
 
-```pscode
+```commonps
 function findSecondMax takes in array {
     if length of array < 2
         return null
@@ -390,7 +390,7 @@ output "Second largest: {secondMax}"  // Output: 78
 
 You can also use the built-in `max()` function:
 
-```pscode
+```commonps
 numbers = [45, 23, 78, 12, 90, 34, 67]
 
 maximum = max(numbers[0], numbers[1], numbers[2])
@@ -420,7 +420,7 @@ maximum = findMax(numbers)
 
 1. **Not checking for empty array**
 
-    ```pscode
+    ```commonps
     // WRONG - crashes on empty array
     max = array[0]
 
@@ -432,7 +432,7 @@ maximum = findMax(numbers)
 
 2. **Starting comparison from index 0**
 
-    ```pscode
+    ```commonps
     // INEFFICIENT - compares first element to itself
     for i from 0 to length of array - 1
 
@@ -442,7 +442,7 @@ maximum = findMax(numbers)
 
 3. **Forgetting negative numbers**
 
-    ```pscode
+    ```commonps
     // WRONG - assumes max starts at 0
     max = 0
     // Fails on arrays like [-5, -2, -8]

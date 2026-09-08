@@ -9,7 +9,7 @@ Records (also called structures or structs) allow you to group related data toge
 
 Define a record structure with named fields:
 
-```pscode
+```commonps
 record Person {
     string name
     number age
@@ -23,7 +23,7 @@ This creates a blueprint for `Person` objects with three fields.
 
 ### Create and Assign Fields
 
-```pscode
+```commonps
 person1 = new Person
 person1.name = "Alice"
 person1.age = 30
@@ -34,7 +34,7 @@ person1.email = "alice@example.com"
 
 Pass values in the order they were defined:
 
-```pscode
+```commonps
 person2 = Person("Bob", 25, "bob@example.com")
 ```
 
@@ -42,7 +42,7 @@ person2 = Person("Bob", 25, "bob@example.com")
 
 Use dot notation to access fields:
 
-```pscode
+```commonps
 person1 = Person("Charlie", 35, "charlie@example.com")
 
 output person1.name   // "Charlie"
@@ -52,7 +52,7 @@ output person1.email  // "charlie@example.com"
 
 ## Modifying Record Fields
 
-```pscode
+```commonps
 person1 = Person("David", 28, "david@example.com")
 
 // Update fields
@@ -66,7 +66,7 @@ output "{person1.name} is now {person1.age} years old"
 
 Store multiple records in an array:
 
-```pscode
+```commonps
 people = [
     Person("Alice", 30, "alice@example.com"),
     Person("Bob", 25, "bob@example.com"),
@@ -80,7 +80,7 @@ output people[1].age   // 25
 
 ### Iterating Through Records
 
-```pscode
+```commonps
 people = [
     Person("Alice", 30, "alice@example.com"),
     Person("Bob", 25, "bob@example.com"),
@@ -99,7 +99,7 @@ for each person in people {
 
 Records can contain other records:
 
-```pscode
+```commonps
 record Address {
     string street
     string city
@@ -125,7 +125,7 @@ output employee.address.city  // "Springfield"
 
 ## Example: Student Management
 
-```pscode
+```commonps
 record Student {
     string name
     number studentId
@@ -161,7 +161,7 @@ output "{student2.name}'s average: {avg2}"
 
 ## Example: Product Catalog
 
-```pscode
+```commonps
 record Product {
     string name
     number price
@@ -195,7 +195,7 @@ for each item in electronics
 
 ## Example: Book Library
 
-```pscode
+```commonps
 record Book {
     string title
     string author
@@ -250,7 +250,7 @@ checkoutBook(library, "1984")  // Will show it's unavailable
 
 ### Before (Parallel Arrays)
 
-```pscode
+```commonps
 names = ["Alice", "Bob", "Charlie"]
 ages = [30, 25, 35]
 emails = ["alice@example.com", "bob@example.com", "charlie@example.com"]
@@ -263,7 +263,7 @@ output emails[0]  // alice@example.com
 
 ### After (Records)
 
-```pscode
+```commonps
 record Person {
     string name
     number age

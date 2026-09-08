@@ -7,7 +7,7 @@ This example demonstrates how to calculate common statistical measures for an ar
 
 ## Complete Implementation
 
-```pscode
+```commonps
 function calculateStatistics takes in array
     if length of array equals 0
         output "Error: Cannot calculate statistics on empty array"
@@ -41,7 +41,7 @@ function calculateStatistics takes in array
 
 ### Example 1: Test Score Analysis
 
-```pscode
+```commonps
 testScores = [78, 92, 85, 67, 95, 88, 72, 90]
 
 stats = calculateStatistics(testScores)
@@ -65,7 +65,7 @@ output "Number of Students: {stats[5]}"
 
 ### Example 2: Temperature Analysis
 
-```pscode
+```commonps
 temperatures = [72, 75, 68, 80, 77, 71, 73]
 
 stats = calculateStatistics(temperatures)
@@ -85,7 +85,7 @@ output "Temperature Variation: {stats[4]}°F"
 
 ### Example 3: Sales Performance
 
-```pscode
+```commonps
 monthlySales = [45000, 52000, 48000, 67000, 59000, 51000]
 
 stats = calculateStatistics(monthlySales)
@@ -108,7 +108,7 @@ for i from 0 to length of monthlySales - 1
 
 ### Calculate Sum
 
-```pscode
+```commonps
 function calculateSum takes in array
     sum = 0
     for each value in array
@@ -122,7 +122,7 @@ output "Sum: {total}"  // Output: 150
 
 ### Calculate Average
 
-```pscode
+```commonps
 function calculateAverage takes in array
     if length of array equals 0
         return 0
@@ -142,7 +142,7 @@ output "Average: {avg}"  // Output: 86.6
 
 Find the middle value when sorted:
 
-```pscode
+```commonps
 function calculateMedian takes in array
     if length of array equals 0
         return null
@@ -176,7 +176,7 @@ output "Median: {median}"  // Output: 25 (average of 20 and 30)
 
 Find the most frequently occurring value:
 
-```pscode
+```commonps
 function calculateMode takes in array
     if length of array equals 0
         return null
@@ -208,7 +208,7 @@ output "Mode: {mode}"  // Output: 2 (appears 3 times)
 
 Measure of variation from the average:
 
-```pscode
+```commonps
 function calculateStandardDeviation takes in array
     if length of array < 2
         return 0
@@ -238,7 +238,7 @@ output "Standard Deviation: {stdDev}"
 
 ## Complete Statistics Program
 
-```pscode
+```commonps
 // All statistical functions
 function calculateSum takes in array
     sum = 0
@@ -339,7 +339,7 @@ output "At Average: {studentCount - aboveAvg - belowAvg} students"
 
 Visualize data distribution:
 
-```pscode
+```commonps
 function generateHistogram takes in array and binSize
     if length of array equals 0
         output "No data to display"
@@ -383,7 +383,7 @@ generateHistogram(scores, 10)
 
 Find the value below which a percentage of data falls:
 
-```pscode
+```commonps
 function calculatePercentile takes in array and percentile
     if length of array equals 0
         return null

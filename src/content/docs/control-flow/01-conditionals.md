@@ -9,7 +9,7 @@ Conditional statements allow your program to make decisions and execute differen
 
 Execute code only when a condition is true:
 
-```pscode
+```commonps
 if age >= 18
     output "You are an adult"
 ```
@@ -18,7 +18,7 @@ if age >= 18
 
 Common Pseudocode supports both symbolic and natural language comparisons:
 
-```pscode
+```commonps
 if currentNumber equals 5
     output "The number is 5"
 
@@ -35,7 +35,7 @@ All three forms are equivalent!
 
 Execute one block if the condition is true, another if false:
 
-```pscode
+```commonps
 if age >= 18
     output "You are an adult"
 else
@@ -46,7 +46,7 @@ else
 
 Check multiple conditions in sequence:
 
-```pscode
+```commonps
 if score >= 90
     output "Grade: A"
 else if score >= 80
@@ -65,7 +65,7 @@ Note: You can also use `elif` or `elseif` instead of `else if`.
 
 ### Greater Than and Less Than
 
-```pscode
+```commonps
 if temperature is greater than 30
     output "It's hot!"
 
@@ -81,7 +81,7 @@ if price <= 50
 
 ### Not Equal
 
-```pscode
+```commonps
 if status does not equal "complete"
     output "Still in progress"
 
@@ -96,7 +96,7 @@ if status != "complete"
 
 ### AND - All conditions must be true
 
-```pscode
+```commonps
 if age >= 18 AND age < 65
     output "Working age adult"
 
@@ -109,7 +109,7 @@ if age >= 18 && age < 65
 
 ### OR - At least one condition must be true
 
-```pscode
+```commonps
 if day equals "Saturday" OR day equals "Sunday"
     output "It's the weekend!"
 
@@ -122,7 +122,7 @@ if day equals "Saturday" || day equals "Sunday"
 
 ### NOT - Invert a boolean
 
-```pscode
+```commonps
 if NOT isLoggedIn
     output "Please log in"
 
@@ -137,7 +137,7 @@ if !isLoggedIn
 
 Test a value against multiple cases:
 
-```pscode
+```commonps
 output "Enter an option (1-6 or 9): "
 input userOption
 
@@ -179,7 +179,7 @@ switch userOption {
 
 You can nest if statements inside each other:
 
-```pscode
+```commonps
 if hasAccount {
     if isVerified
         output "Welcome back!"
@@ -193,7 +193,7 @@ if hasAccount {
 
 Combine multiple logical operators:
 
-```pscode
+```commonps
 if (age >= 18 AND age < 65) OR isStudent
     output "Eligible for standard rate"
 

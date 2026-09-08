@@ -16,7 +16,7 @@ The linear search algorithm:
 
 ## Implementation
 
-```pscode
+```commonps
 function linearSearch takes in array and target {
     for i from 0 to length of array - 1 {
         if array[i] equals target
@@ -40,7 +40,7 @@ Where n is the number of elements in the array.
 
 ### Example 1: Finding a Number
 
-```pscode
+```commonps
 numbers = [10, 23, 45, 67, 89, 12, 34]
 target = 67
 
@@ -56,7 +56,7 @@ else
 
 ### Example 2: Finding a String
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange", "grape", "mango"]
 searchFruit = "orange"
 
@@ -72,7 +72,7 @@ else
 
 ### Example 3: Search with User Input
 
-```pscode
+```commonps
 // Create array of student names
 students = ["Alice", "Bob", "Charlie", "David", "Eve"]
 
@@ -93,7 +93,7 @@ else
 
 Find how many times a value appears in an array:
 
-```pscode
+```commonps
 function linearSearchCount takes in array and target {
     count = 0
     for i from 0 to length of array - 1 {
@@ -112,7 +112,7 @@ output "Found {occurrences} occurrences"  // Found 3 occurrences
 
 Return all indices where the target appears:
 
-```pscode
+```commonps
 function linearSearchAll takes in array and target {
     positions = []
     for i from 0 to length of array - 1 {
@@ -133,7 +133,7 @@ for each index in indices
 
 Search using a custom condition:
 
-```pscode
+```commonps
 function linearSearchGreaterThan takes in array and threshold {
     for i from 0 to length of array - 1 {
         if array[i] > threshold
@@ -177,7 +177,7 @@ output "First number > 5 is at index {index}"  // index 1 (value 7)
 
 ## Complete Example Program
 
-```pscode
+```commonps
 // Complete linear search program
 function linearSearch takes in array and target {
     for i from 0 to length of array - 1 {

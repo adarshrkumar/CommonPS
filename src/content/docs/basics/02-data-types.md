@@ -9,7 +9,7 @@ Common Pseudocode supports several fundamental data types that you'll use throug
 
 Numbers can be integers or decimals (floating-point):
 
-```pscode
+```commonps
 number age = 25
 number price = 19.99
 number count = 0
@@ -17,7 +17,7 @@ number count = 0
 
 The `number` type declaration is optional in most cases:
 
-```pscode
+```commonps
 age = 25
 price = 19.99
 ```
@@ -26,7 +26,7 @@ price = 19.99
 
 Strings represent text and can be enclosed in single quotes, double quotes, or backticks:
 
-```pscode
+```commonps
 string name = "John"
 string greeting = 'Hello'
 string message = `Welcome!`
@@ -36,7 +36,7 @@ string message = `Welcome!`
 
 Use backticks or triple quotes for strings spanning multiple lines:
 
-```pscode
+```commonps
 description = `
 This is a multiline string
 that spans multiple lines
@@ -45,7 +45,7 @@ that spans multiple lines
 
 Or with triple quotes:
 
-```pscode
+```commonps
 text = """
 This is also a multiline string
 with multiple lines
@@ -56,7 +56,7 @@ with multiple lines
 
 Embed variables in strings using curly braces:
 
-```pscode
+```commonps
 name = "Alice"
 age = 30
 output "Hello, my name is {name} and I am {age} years old"
@@ -67,7 +67,7 @@ output "Hello, my name is {name} and I am {age} years old"
 
 Join strings together:
 
-```pscode
+```commonps
 greeting = "Hello" " " "World"  // Results in "Hello World"
 fullName = firstName " " lastName
 ```
@@ -76,7 +76,7 @@ fullName = firstName " " lastName
 
 Booleans represent true or false values:
 
-```pscode
+```commonps
 boolean isActive = true
 boolean isComplete = false
 ```
@@ -86,7 +86,7 @@ Boolean literals are case-insensitive for the whole word:
 - Valid: `true`, `True`, `TRUE`, `false`, `False`, `FALSE`
 - Invalid: `tRuE`, `fAlSe` (mixed case not supported)
 
-```pscode
+```commonps
 isValid = true
 isReady = TRUE
 isDone = False
@@ -96,7 +96,7 @@ isDone = False
 
 Convert values between different types:
 
-```pscode
+```commonps
 // String to number
 stringValue = "123"
 numValue = convert stringValue to number  // or number(stringValue)
@@ -110,7 +110,7 @@ stringFromNum = convert age to string  // or string(age)
 
 Check if a value is of a specific type:
 
-```pscode
+```commonps
 value = 42
 if is number(value)
     output "It's a number!"
@@ -126,7 +126,7 @@ if is boolean(value)
 
 While optional, you can explicitly declare variable types:
 
-```pscode
+```commonps
 number age = 25
 string name = "John"
 number price = 19.99

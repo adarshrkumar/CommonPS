@@ -11,7 +11,7 @@ Variables are named storage locations that hold values in your program. They're 
 
 Simply assign a value to create a variable:
 
-```pscode
+```commonps
 name = "Alice"
 age = 30
 price = 19.99
@@ -22,7 +22,7 @@ isActive = true
 
 Optionally specify the variable type:
 
-```pscode
+```commonps
 number age = 30
 string name = "Alice"
 boolean isActive = true
@@ -35,7 +35,7 @@ Explicit types make your code more readable and help prevent type-related errors
 
 Declare a variable without initializing it:
 
-```pscode
+```commonps
 define counter
 define userName
 define isValid
@@ -49,7 +49,7 @@ This is useful when you need to declare a variable before you know its value.
 
 ### When to Use `define`
 
-```pscode
+```commonps
 // Good use case: variable will be set conditionally
 define message
 
@@ -67,7 +67,7 @@ output message
 
 ### Simple Assignment
 
-```pscode
+```commonps
 x = 5
 name = "Bob"
 isComplete = false
@@ -77,7 +77,7 @@ isComplete = false
 
 Variables can be assigned the value of other variables:
 
-```pscode
+```commonps
 original = 42
 copy = original  // copy now equals 42
 
@@ -87,7 +87,7 @@ output copy      // still 42
 
 ### Multiple Assignments
 
-```pscode
+```commonps
 a = 10
 b = 20
 c = 30
@@ -103,7 +103,7 @@ b = temp
 
 ### Valid Variable Names
 
-```pscode
+```commonps
 age = 25
 firstName = "John"
 user_name = "alice123"
@@ -116,7 +116,7 @@ count2 = 5
 
 **Camel Case** (recommended):
 
-```pscode
+```commonps
 firstName = "Alice"
 totalPrice = 99.99
 isLoggedIn = true
@@ -125,7 +125,7 @@ studentCount = 30
 
 **Snake Case**:
 
-```pscode
+```commonps
 first_name = "Alice"
 total_price = 99.99
 is_logged_in = true
@@ -145,7 +145,7 @@ Variables must follow specific naming rules. Here are common mistakes to avoid:
 
 **Starting with numbers:**
 
-```pscode
+```commonps
 2ndPlace = "Alice"     // Invalid - starts with number
 1stStudent = "Bob"     // Invalid - starts with number
 99problems = "Jay-Z"   // Invalid - starts with number
@@ -153,7 +153,7 @@ Variables must follow specific naming rules. Here are common mistakes to avoid:
 
 **Using kebab-case (hyphens):**
 
-```pscode
+```commonps
 user-name = "Bob"      // Invalid - hyphens not allowed
 first-name = "Alice"   // Invalid - hyphens not allowed
 total-price = 99.99    // Invalid - hyphens not allowed
@@ -162,7 +162,7 @@ is-valid = true        // Invalid - hyphens not allowed
 
 **Using dots or other special characters:**
 
-```pscode
+```commonps
 first.name = "Charlie" // Invalid - dots not allowed
 user@name = "Dave"     // Invalid - @ not allowed
 total$ = 100           // Invalid - $ not allowed
@@ -172,7 +172,7 @@ user#id = 123          // Invalid - # not allowed
 
 **Spaces in names:**
 
-```pscode
+```commonps
 first name = "Alice"   // Invalid - spaces not allowed
 total price = 99.99    // Invalid - spaces not allowed
 user count = 10        // Invalid - spaces not allowed
@@ -180,7 +180,7 @@ user count = 10        // Invalid - spaces not allowed
 
 **Starting with special characters:**
 
-```pscode
+```commonps
 _private = "secret"    // Valid, but discouraged
 $value = 100           // Invalid - $ not allowed
 #count = 5             // Invalid - # not allowed
@@ -189,7 +189,7 @@ $value = 100           // Invalid - $ not allowed
 
 **Reserved keywords:**
 
-```pscode
+```commonps
 if = 5                 // Invalid - 'if' is a keyword
 while = 10             // Invalid - 'while' is a keyword
 for = 3                // Invalid - 'for' is a keyword
@@ -205,7 +205,7 @@ return = true          // Invalid - 'return' is a keyword
 
 Variables defined inside functions or blocks:
 
-```pscode
+```commonps
 function calculateTotal takes in price and quantity {
     subtotal = price * quantity  // Local to this function
     tax = subtotal * 0.1         // Local to this function
@@ -218,7 +218,7 @@ function calculateTotal takes in price and quantity {
 
 ### Using Variables
 
-```pscode
+```commonps
 // Counter variable
 count = 0
 count = count + 1
@@ -241,7 +241,7 @@ for each item in items
 
 Variables can be reassigned to new values:
 
-```pscode
+```commonps
 score = 0
 output "Score: {score}"  // 0
 
@@ -259,7 +259,7 @@ output "Score: {score}"  // 16
 
 Variables can hold different types at different times:
 
-```pscode
+```commonps
 value = 42        // number
 output value      // 42
 
@@ -276,7 +276,7 @@ output value      // true
 
 Shorthand for updating variables:
 
-```pscode
+```commonps
 counter = 10
 
 counter += 5    // counter = counter + 5  (15)
@@ -289,7 +289,7 @@ counter ^= 3    // counter = counter ^ 3  (8)
 
 ## Increment and Decrement
 
-```pscode
+```commonps
 count = 5
 
 count++   // count = count + 1  (6)
@@ -305,7 +305,7 @@ for i from 0 to 10
 
 ### Always Initialize
 
-```pscode
+```commonps
 // Good: initialized
 sum = 0
 count = 0
@@ -319,7 +319,7 @@ total = total + 10  // Error if total has no initial value
 
 ### Default Values
 
-```pscode
+```commonps
 // Numbers: start at 0
 count = 0
 sum = 0
@@ -341,7 +341,7 @@ numbers = []
 
 ### Swap Variables
 
-```pscode
+```commonps
 a = 10
 b = 20
 
@@ -354,7 +354,7 @@ output "a = {a}, b = {b}"  // a = 20, b = 10
 
 ### Running Total
 
-```pscode
+```commonps
 total = 0
 prices = [19.99, 29.99, 9.99, 39.99]
 
@@ -366,7 +366,7 @@ output "Total: ${total}"
 
 ### Counter
 
-```pscode
+```commonps
 positiveCount = 0
 numbers = [5, -3, 8, -1, 12, -7]
 
@@ -379,7 +379,7 @@ output "Positive numbers: {positiveCount}"
 
 ### Flag Variable
 
-```pscode
+```commonps
 hasErrors = false
 values = [5, 10, -3, 20]
 
@@ -394,7 +394,7 @@ if hasErrors
 
 ### Maximum/Minimum Tracking
 
-```pscode
+```commonps
 numbers = [23, 45, 12, 67, 34]
 
 max = numbers[0]
@@ -413,7 +413,7 @@ output "Max: {max}, Min: {min}"
 
 ### Temperature Converter
 
-```pscode
+```commonps
 output "Enter temperature in Fahrenheit: "
 input fahrenheit
 fahrenheit = convert fahrenheit to number
@@ -425,7 +425,7 @@ output "{fahrenheit}°F = {celsius}°C"
 
 ### Grade Calculator
 
-```pscode
+```commonps
 output "Enter three test scores:"
 input score1
 input score2
@@ -452,7 +452,7 @@ else
 
 ### Simple Interest Calculator
 
-```pscode
+```commonps
 output "Principal amount: "
 input principal
 principal = convert principal to number
@@ -476,7 +476,7 @@ output "Total amount: ${total}"
 
 1. **Use meaningful names**
 
-   ```pscode
+   ```commonps
    // Bad
    x = 30
 
@@ -486,7 +486,7 @@ output "Total amount: ${total}"
 
 2. **Initialize before use**
 
-   ```pscode
+   ```commonps
    // Bad
    define total
    total = total + 10  // Error!
@@ -498,7 +498,7 @@ output "Total amount: ${total}"
 
 3. **Keep scope minimal**
 
-   ```pscode
+   ```commonps
    // Only declare variables where needed
    for i from 1 to 10
        temp = i * 2  // temp only exists in loop
@@ -507,7 +507,7 @@ output "Total amount: ${total}"
 
 4. **Use constants for fixed values**
 
-   ```pscode
+   ```commonps
    constant TAX_RATE = 0.08
    constant MAX_USERS = 100
 
@@ -517,7 +517,7 @@ output "Total amount: ${total}"
 
 5. **Be consistent with naming**
 
-   ```pscode
+   ```commonps
    // Pick one style and stick with it
    firstName = "Alice"    // camelCase
    lastName = "Smith"     // camelCase

@@ -9,7 +9,7 @@ Constants are values that cannot be changed after they're defined. They're usefu
 
 Use the `constant` keyword to define a constant:
 
-```pscode
+```commonps
 constant PI = 3.14159
 constant MAX_USERS = 100
 constant COMPANY_NAME = "Acme Corp"
@@ -20,7 +20,7 @@ constant TAX_RATE = 0.08
 
 Constants are typically written in UPPERCASE with underscores:
 
-```pscode
+```commonps
 constant MAX_LENGTH = 50
 constant DEFAULT_TIMEOUT = 30
 constant ERROR_MESSAGE = "An error occurred"
@@ -33,7 +33,7 @@ This makes it easy to distinguish constants from regular variables.
 
 Once defined, use constants like regular variables:
 
-```pscode
+```commonps
 constant PI = 3.14159
 
 radius = 5
@@ -48,7 +48,7 @@ output "Area: {area}"
 
 Attempting to modify a constant will result in an error:
 
-```pscode
+```commonps
 constant MAX_SCORE = 100
 
 MAX_SCORE = 150  // Error: cannot reassign constant
@@ -58,7 +58,7 @@ MAX_SCORE = 150  // Error: cannot reassign constant
 
 ### 1. Prevent Accidental Changes
 
-```pscode
+```commonps
 constant SPEED_OF_LIGHT = 299792458  // meters per second
 
 /* Later in code...
@@ -67,7 +67,7 @@ constant SPEED_OF_LIGHT = 299792458  // meters per second
 
 ### 2. Improve Readability
 
-```pscode
+```commonps
 // Without constants - unclear what 0.08 means
 total = price + (price * 0.08)
 
@@ -78,7 +78,7 @@ total = price + (price * TAX_RATE)
 
 ### 3. Easy Maintenance
 
-```pscode
+```commonps
 // Define once, use everywhere
 constant MAX_LOGIN_ATTEMPTS = 3
 
@@ -98,7 +98,7 @@ If you need to change the value, you only update it in one place!
 
 ### Mathematical Constants
 
-```pscode
+```commonps
 constant PI = 3.14159265359
 constant E = 2.71828182846
 constant GOLDEN_RATIO = 1.61803398875
@@ -111,7 +111,7 @@ area = PI * radius ^ 2
 
 ### Configuration Values
 
-```pscode
+```commonps
 constant MAX_FILE_SIZE = 1048576  // 1 MB in bytes
 constant SESSION_TIMEOUT = 1800   // 30 minutes in seconds
 constant MAX_RETRIES = 3
@@ -120,7 +120,7 @@ constant DEFAULT_PORT = 8080
 
 ### Business Rules
 
-```pscode
+```commonps
 constant TAX_RATE = 0.08
 constant SHIPPING_COST = 5.99
 constant FREE_SHIPPING_THRESHOLD = 50.00
@@ -140,7 +140,7 @@ total = subtotal + tax + shipping
 
 ### Game Development
 
-```pscode
+```commonps
 constant SCREEN_WIDTH = 800
 constant SCREEN_HEIGHT = 600
 constant GRAVITY = 9.8
@@ -159,7 +159,7 @@ while currentLevel <= LEVEL_COUNT {
 
 ### Validation Rules
 
-```pscode
+```commonps
 constant MIN_PASSWORD_LENGTH = 8
 constant MAX_PASSWORD_LENGTH = 128
 constant MIN_AGE = 13
@@ -183,7 +183,7 @@ if length of password < MIN_PASSWORD_LENGTH {
 
 ### Circle Calculator
 
-```pscode
+```commonps
 constant PI = 3.14159
 
 output "Circle Calculator"
@@ -205,7 +205,7 @@ output "Area: {area}"
 
 ### Shopping Cart
 
-```pscode
+```commonps
 constant TAX_RATE = 0.08
 constant SHIPPING_COST = 5.99
 constant FREE_SHIPPING_MINIMUM = 50.00
@@ -255,7 +255,7 @@ output "Total: ${total}"
 
 ### Temperature Converter
 
-```pscode
+```commonps
 constant FAHRENHEIT_OFFSET = 32
 constant FAHRENHEIT_SCALE = 5 / 9
 
@@ -284,7 +284,7 @@ if choice equals 1 {
 
 ### Grade Boundaries
 
-```pscode
+```commonps
 constant GRADE_A_MIN = 90
 constant GRADE_B_MIN = 80
 constant GRADE_C_MIN = 70
@@ -312,7 +312,7 @@ if score < 0 OR score > MAX_SCORE {
 
 ### Retry Logic
 
-```pscode
+```commonps
 constant MAX_ATTEMPTS = 3
 constant CORRECT_PASSWORD = "secret123"
 
@@ -348,7 +348,7 @@ if NOT authenticated
 - Value is a configuration setting
 - Value defines business rules or limits
 
-```pscode
+```commonps
 constant MAX_INVENTORY = 1000
 constant DEFAULT_CURRENCY = "USD"
 ```
@@ -360,7 +360,7 @@ constant DEFAULT_CURRENCY = "USD"
 - Value depends on user input or calculations
 - Value represents program state
 
-```pscode
+```commonps
 currentInventory = 500  // Will change as items are sold
 userCurrency = "EUR"    // User can select different currency
 ```
@@ -369,14 +369,14 @@ userCurrency = "EUR"    // User can select different currency
 
 1. **Use UPPERCASE names**
 
-   ```pscode
+   ```commonps
    constant MAX_SIZE = 100  // Good
    constant maxSize = 100   // Less clear
    ```
 
 2. **Group related constants**
 
-   ```pscode
+   ```commonps
    // Database configuration
    constant DB_HOST = "localhost"
    constant DB_PORT = 5432
@@ -390,7 +390,7 @@ userCurrency = "EUR"    // User can select different currency
 
 3. **Define constants at the top**
 
-   ```pscode
+   ```commonps
    // All constants defined first
    constant TAX_RATE = 0.08
    constant SHIPPING_COST = 5.99
@@ -403,7 +403,7 @@ userCurrency = "EUR"    // User can select different currency
 
 4. **Use descriptive names**
 
-   ```pscode
+   ```commonps
    constant TIMEOUT_SECONDS = 30  // Good
    constant T = 30                // Bad
 
@@ -413,7 +413,7 @@ userCurrency = "EUR"    // User can select different currency
 
 5. **Document magic numbers**
 
-   ```pscode
+   ```commonps
    // Instead of:
    if temperature > 100 {
        output "Water is boiling"

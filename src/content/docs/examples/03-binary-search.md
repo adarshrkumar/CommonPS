@@ -18,7 +18,7 @@ The binary search algorithm:
 
 ## Implementation
 
-```pscode
+```commonps
 function binarySearch takes in array and target {
     left = 0
     right = length of array - 1
@@ -73,7 +73,7 @@ Step 3: [|67|, 78]
 
 ### Example 1: Basic Binary Search
 
-```pscode
+```commonps
 // Must be sorted!
 numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90]
 target = 60
@@ -90,7 +90,7 @@ else
 
 ### Example 2: Search in Large Array
 
-```pscode
+```commonps
 // Generate sorted array of even numbers
 evenNumbers = []
 for i from 1 to 1000
@@ -108,7 +108,7 @@ else
 
 ### Example 3: Dictionary Lookup
 
-```pscode
+```commonps
 // Sorted list of words
 dictionary = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape"]
 
@@ -129,7 +129,7 @@ else
 
 Find the first occurrence of a target in an array with duplicates:
 
-```pscode
+```commonps
 function binarySearchFirst takes in array and target {
     left = 0
     right = length of array - 1
@@ -160,7 +160,7 @@ output "First occurrence at index {firstTwo}"  // index 1
 
 Find the last occurrence of a target:
 
-```pscode
+```commonps
 function binarySearchLast takes in array and target {
     left = 0
     right = length of array - 1
@@ -191,7 +191,7 @@ output "Last occurrence at index {lastTwo}"  // index 3
 
 Find where to insert a value to maintain sorted order:
 
-```pscode
+```commonps
 function binarySearchInsertionPoint takes in array and target {
     left = 0
     right = length of array
@@ -217,7 +217,7 @@ output "Insert 45 at index {insertAt}"  // index 3
 
 Binary search vs Linear search on 1,000,000 elements:
 
-```pscode
+```commonps
 /* Linear Search: Up to 1,000,000 comparisons
    Binary Search: Maximum 20 comparisons
 
@@ -226,7 +226,7 @@ Binary search vs Linear search on 1,000,000 elements:
 
 **Example:**
 
-```pscode
+```commonps
 // Create large sorted array
 largeArray = []
 for i from 1 to 1000000
@@ -241,7 +241,7 @@ index = binarySearch(largeArray, target)
 
 ## Complete Example Program
 
-```pscode
+```commonps
 // Binary search implementation and demonstration
 function binarySearch takes in array and target {
     left = 0
@@ -329,7 +329,7 @@ else {
 
 1. **Forgetting to sort the array first**
 
-   ```pscode
+   ```commonps
    // WRONG - unsorted array
    numbers = [50, 20, 80, 10, 90]
    binarySearch(numbers, 20)  // May not work!
@@ -341,14 +341,14 @@ else {
 
 2. **Integer overflow in midpoint calculation**
 
-   ```pscode
+   ```commonps
    // Better way to calculate midpoint
    mid = left + floor((right - left) / 2)
    ```
 
 3. **Infinite loops with incorrect boundaries**
 
-   ```pscode
+   ```commonps
    // Make sure to update left and right correctly
    left = mid + 1  // NOT left = mid
    right = mid - 1 // NOT right = mid

@@ -13,14 +13,14 @@ Returns the number of elements in an array.
 
 **Syntax:**
 
-```pscode
+```commonps
 count = length of array
 count = array.length
 ```
 
 **Example:**
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 4, 5]
 count = length of numbers  // 5
 count = numbers.length     // 5
@@ -36,7 +36,7 @@ Adds an element to the end of an array.
 
 **Syntax:**
 
-```pscode
+```commonps
 append element to array
 array.append(element)
 array.push(element)
@@ -44,7 +44,7 @@ array.push(element)
 
 **Example:**
 
-```pscode
+```commonps
 numbers = [1, 2, 3]
 append 4 to numbers  // [1, 2, 3, 4]
 
@@ -60,14 +60,14 @@ Inserts an element at a specific index in an array.
 
 **Syntax:**
 
-```pscode
+```commonps
 insert element at index position in array
 array.insert(position, element)
 ```
 
 **Example:**
 
-```pscode
+```commonps
 fruits = ["apple", "orange"]
 insert "banana" at index 1 in fruits  // ["apple", "banana", "orange"]
 
@@ -85,14 +85,14 @@ Removes an element from an array at a specified index.
 
 **Syntax:**
 
-```pscode
+```commonps
 remove element at index position from array
 array.remove(position)
 ```
 
 **Example:**
 
-```pscode
+```commonps
 numbers = [1, 2, 3, 4, 5]
 remove element at index 2 from numbers  // [1, 2, 4, 5]
 
@@ -110,13 +110,13 @@ Checks whether an element exists in an array.
 
 **Syntax:**
 
-```pscode
+```commonps
 if element is in array
 ```
 
 **Example:**
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 
 if "apple" is in fruits
@@ -138,7 +138,7 @@ Sorts an array in ascending or descending order.
 
 **Syntax:**
 
-```pscode
+```commonps
 sort array in ascending order
 sort array in descending order
 array.sort()
@@ -147,7 +147,7 @@ array.sort(descending)
 
 **Example:**
 
-```pscode
+```commonps
 numbers = [5, 2, 8, 1, 9]
 sort numbers in ascending order  // [1, 2, 5, 8, 9]
 
@@ -168,13 +168,13 @@ Access elements using zero-based indexing.
 
 **Syntax:**
 
-```pscode
+```commonps
 element = array[index]
 ```
 
 **Example:**
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 firstFruit = fruits[0]   // "apple"
 secondFruit = fruits[1]  // "banana"
@@ -189,13 +189,13 @@ Change the value of an element at a specific index.
 
 **Syntax:**
 
-```pscode
+```commonps
 array[index] = newValue
 ```
 
 **Example:**
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 fruits[1] = "grape"  // ["apple", "grape", "orange"]
 ```
@@ -210,14 +210,14 @@ Iterate over each element in an array.
 
 **Syntax:**
 
-```pscode
+```commonps
 for each element in array
     // code block
 ```
 
 **Example:**
 
-```pscode
+```commonps
 fruits = ["apple", "banana", "orange"]
 for each fruit in fruits
     output fruit
@@ -231,14 +231,14 @@ Loop through array using indices.
 
 **Syntax:**
 
-```pscode
+```commonps
 for i from 0 to length of array - 1
     // use array[i]
 ```
 
 **Example:**
 
-```pscode
+```commonps
 numbers = [10, 20, 30, 40]
 for i from 0 to length of numbers - 1
     output "Index {i}: {numbers[i]}"
@@ -252,7 +252,7 @@ for i from 0 to length of numbers - 1
 
 **Example:**
 
-```pscode
+```commonps
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 ```
 
@@ -262,13 +262,13 @@ grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 **Syntax:**
 
-```pscode
+```commonps
 value = array[row][column]
 ```
 
 **Example:**
 
-```pscode
+```commonps
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 value = grid[1][2]  // 6 (row 1, column 2)
 value = grid[0][0]  // 1 (row 0, column 0)
@@ -280,7 +280,7 @@ value = grid[0][0]  // 1 (row 0, column 0)
 
 **Example:**
 
-```pscode
+```commonps
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 for each row in grid {
@@ -294,7 +294,7 @@ for each row in grid {
 
 ## Common Array Operations Example
 
-```pscode
+```commonps
 // Create an empty shopping list
 shoppingList = []
 

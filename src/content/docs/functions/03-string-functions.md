@@ -13,14 +13,14 @@ Returns the number of characters in a string.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = length of text
 result = text.length
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "Hello World"
 textLength = length of text  // 11
 count = text.length          // 11
@@ -36,13 +36,13 @@ Converts all characters in a string to uppercase.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = text to uppercase
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "Hello World"
 uppercase = text to uppercase  // "HELLO WORLD"
 ```
@@ -55,13 +55,13 @@ Converts all characters in a string to lowercase.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = text to lowercase
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "Hello World"
 lowercase = text to lowercase  // "hello world"
 ```
@@ -76,13 +76,13 @@ Extracts a portion of a string from a start index to an end index.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = substring of text from start to end
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "Hello World"
 substring = substring of text from 0 to 5  // "Hello"
 substring = substring of text from 6 to 11 // "World"
@@ -98,13 +98,13 @@ Access individual characters using array-like indexing.
 
 **Syntax:**
 
-```pscode
+```commonps
 char = text[index]
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "Hello World"
 firstChar = text[0]   // "H"
 lastChar = text[10]   // "d"
@@ -120,13 +120,13 @@ Finds the position of a substring within a string.
 
 **Syntax:**
 
-```pscode
+```commonps
 position = find substring in text
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "Hello World"
 position = find "World" in text  // returns 6
 position = find "o" in text      // returns 4 (first occurrence)
@@ -142,13 +142,13 @@ Checks whether a string contains a specific substring.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = text contains substring
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "Hello World"
 hasWorld = text contains "World"  // returns true
 hasJava = text contains "Java"    // returns false
@@ -167,13 +167,13 @@ Removes leading and trailing whitespace from a string.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = trim(text)
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "  Hello World  "
 trimmed = trim(text)  // "Hello World"
 ```
@@ -186,13 +186,13 @@ Splits a string into an array of substrings based on a delimiter.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = split text by delimiter
 ```
 
 **Example:**
 
-```pscode
+```commonps
 text = "Hello World"
 words = split text by " "  // ["Hello", "World"]
 
@@ -208,13 +208,13 @@ Joins an array of strings into a single string with a delimiter.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = join array with delimiter
 ```
 
 **Example:**
 
-```pscode
+```commonps
 words = ["Hello", "World"]
 text = join words with " "  // "Hello World"
 
@@ -232,13 +232,13 @@ Join strings together by placing them next to each other.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = "string1" "string2" "string3"
 ```
 
 **Example:**
 
-```pscode
+```commonps
 greeting = "Hello" " " "World"  // "Hello World"
 ```
 
@@ -250,13 +250,13 @@ Embed variables in strings using curly braces.
 
 **Syntax:**
 
-```pscode
+```commonps
 result = "text {variable} more text"
 ```
 
 **Example:**
 
-```pscode
+```commonps
 num = 10
 message = "Hello the number is {num}"  // "Hello the number is 10"
 
@@ -276,14 +276,14 @@ Convert other data types to strings.
 
 **Syntax:**
 
-```pscode
+```commonps
 stringValue = convert value to string
 stringValue = string(value)
 ```
 
 **Example:**
 
-```pscode
+```commonps
 age = 25
 stringAge = convert age to string  // "25"
 stringAge = string(age)            // "25"
@@ -293,7 +293,7 @@ stringAge = string(age)            // "25"
 
 ## Common String Operations Example
 
-```pscode
+```commonps
 // Get user input
 output "Enter your full name: "
 input fullName

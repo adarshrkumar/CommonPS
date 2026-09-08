@@ -7,7 +7,7 @@ Switch statements provide a clean way to handle multiple possible values for a s
 
 ## Basic Switch Statement
 
-```pscode
+```commonps
 output "Enter a day number (1-7): "
 input dayNumber
 dayNumber = convert dayNumber to number
@@ -45,7 +45,7 @@ switch dayNumber {
 
 Defines a value to match:
 
-```pscode
+```commonps
 case 1
     output "Option one"
     jump
@@ -55,7 +55,7 @@ case 1
 
 Exits the switch statement after executing a case:
 
-```pscode
+```commonps
 case 2
     output "Option two"
     jump  // or break
@@ -65,7 +65,7 @@ case 2
 
 Executes if no case matches:
 
-```pscode
+```commonps
 default
     output "No match found"
 ```
@@ -74,7 +74,7 @@ default
 
 Terminates the entire program:
 
-```pscode
+```commonps
 case 9
     output "Exiting program..."
     exit  // or stop, or return
@@ -82,7 +82,7 @@ case 9
 
 ## Simple Menu Example
 
-```pscode
+```commonps
 output "=== Main Menu ==="
 output "1. New Game"
 output "2. Load Game"
@@ -113,7 +113,7 @@ switch choice {
 
 ## Switch with Strings
 
-```pscode
+```commonps
 output "Enter a command (start/stop/pause/resume): "
 input command
 command = command to lowercase
@@ -138,7 +138,7 @@ switch command {
 
 ## Calculator Example
 
-```pscode
+```commonps
 output "Simple Calculator"
 output "Enter first number: "
 input num1Input
@@ -179,7 +179,7 @@ switch operation {
 
 ## Traffic Light Controller
 
-```pscode
+```commonps
 currentLight = "green"
 
 output "Current light: {currentLight}"
@@ -218,7 +218,7 @@ switch action {
 
 ## Grade Converter
 
-```pscode
+```commonps
 output "Enter letter grade (A, B, C, D, F): "
 input letterGrade
 letterGrade = letterGrade to uppercase
@@ -251,7 +251,7 @@ switch letterGrade {
 
 ## Month Days Calculator
 
-```pscode
+```commonps
 output "Enter month number (1-12): "
 input monthInput
 month = convert monthInput to number
@@ -317,7 +317,7 @@ switch month {
 
 ## Vending Machine
 
-```pscode
+```commonps
 constant SODA_PRICE = 1.50
 constant CHIPS_PRICE = 1.25
 constant CANDY_PRICE = 1.00
@@ -376,7 +376,7 @@ if payment < price {
 
 ## ATM Machine
 
-```pscode
+```commonps
 balance = 1000.00
 
 output "=== ATM Menu ==="
@@ -437,7 +437,7 @@ switch choice
 - Code clarity is improved
 - Cases are simple comparisons
 
-```pscode
+```commonps
 // Good use of switch
 switch menuChoice
     case 1
@@ -459,7 +459,7 @@ switch menuChoice
 - Multiple variables involved
 - Conditions are not constant values
 
-```pscode
+```commonps
 // Better with if-else
 if score >= 90 AND score <= 100
     output "A"
@@ -471,7 +471,7 @@ else if score >= 70
 
 ## Nested Switch Statements
 
-```pscode
+```commonps
 output "Select category (1=Electronics, 2=Clothing): "
 input categoryInput
 category = convert categoryInput to number
@@ -527,7 +527,7 @@ switch category
 
 1. **Always include default**
 
-   ```pscode
+   ```commonps
    switch value
        case 1
            // handle case 1
@@ -538,7 +538,7 @@ switch category
 
 2. **Use jump/break to prevent fall-through**
 
-   ```pscode
+   ```commonps
    // Always end cases with jump
    case 1
        output "Case 1"
@@ -547,7 +547,7 @@ switch category
 
 3. **Keep cases simple**
 
-   ```pscode
+   ```commonps
    // Good
    case 1
        processOption1()
@@ -558,7 +558,7 @@ switch category
 
 4. **Validate input before switch**
 
-   ```pscode
+   ```commonps
    input choice
    choice = convert choice to number
 
@@ -571,7 +571,7 @@ switch category
 
 5. **Use constants for case values**
 
-   ```pscode
+   ```commonps
    constant OPTION_NEW = 1
    constant OPTION_LOAD = 2
    constant OPTION_EXIT = 3

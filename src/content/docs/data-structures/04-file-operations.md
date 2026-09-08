@@ -9,7 +9,7 @@ File operations allow your programs to persist data beyond program execution. Co
 
 Use the `open file` statement to access a file:
 
-```pscode
+```commonps
 open file "data.txt" for reading as fileHandle
 ```
 
@@ -23,7 +23,7 @@ open file "data.txt" for reading as fileHandle
 
 ### Read Line by Line
 
-```pscode
+```commonps
 open file "data.txt" for reading as fileHandle
 
 while not end of fileHandle {
@@ -36,7 +36,7 @@ close fileHandle
 
 ### Read Entire File
 
-```pscode
+```commonps
 open file "story.txt" for reading as fileHandle
 
 content = ""
@@ -51,7 +51,7 @@ output content
 
 ### Read File with Error Handling
 
-```pscode
+```commonps
 try {
     open file "data.txt" for reading as fileHandle
 
@@ -73,7 +73,7 @@ try {
 
 ### Write New File
 
-```pscode
+```commonps
 open file "output.txt" for writing as fileHandle
 write "Hello, World!" to fileHandle
 write "This is line 2" to fileHandle
@@ -85,7 +85,7 @@ output "File written successfully"
 
 ### Overwrite Existing File
 
-```pscode
+```commonps
 // Writing mode automatically overwrites
 open file "data.txt" for writing as fileHandle
 write "New content" to fileHandle
@@ -94,7 +94,7 @@ close fileHandle
 
 ### Write with Error Handling
 
-```pscode
+```commonps
 try {
     open file "output.txt" for writing as fileHandle
     write "Line 1" to fileHandle
@@ -111,7 +111,7 @@ try {
 
 Add content to the end of an existing file:
 
-```pscode
+```commonps
 open file "log.txt" for appending as fileHandle
 write "New log entry" to fileHandle
 write "Another entry" to fileHandle
@@ -120,7 +120,7 @@ close fileHandle
 
 ### Log File Example
 
-```pscode
+```commonps
 function writeLog takes in message {
     try {
         open file "application.log" for appending as logFile
@@ -140,7 +140,7 @@ writeLog("Data processed successfully")
 
 ## Reading Numbers from File
 
-```pscode
+```commonps
 open file "numbers.txt" for reading as fileHandle
 
 numbers = []
@@ -165,7 +165,7 @@ output "Average: {sum / length of numbers}"
 
 ### Reading CSV
 
-```pscode
+```commonps
 open file "students.csv" for reading as fileHandle
 
 students = []
@@ -197,7 +197,7 @@ close fileHandle
 
 ### Writing CSV
 
-```pscode
+```commonps
 students = [
     ["Alice", 20, "A"],
     ["Bob", 19, "B"],
@@ -225,7 +225,7 @@ output "CSV file created"
 
 ### Reading Configuration
 
-```pscode
+```commonps
 config = []
 
 open file "config.txt" for reading as fileHandle
@@ -255,7 +255,7 @@ for each setting in config
 
 ### Writing Configuration
 
-```pscode
+```commonps
 settings = [
     ["theme", "dark"],
     ["fontSize", "14"],
@@ -277,7 +277,7 @@ close fileHandle
 
 ### Save Game State
 
-```pscode
+```commonps
 function saveGame takes in playerName and score and level {
     try {
         open file "savegame.txt" for writing as saveFile
@@ -336,7 +336,7 @@ if gameData != null
 
 ## Student Records System
 
-```pscode
+```commonps
 record Student {
     string name
     number studentId
@@ -418,7 +418,7 @@ output "Loaded {length of loadedStudents} students"
 
 ## High Score System
 
-```pscode
+```commonps
 record HighScore {
     string playerName
     number score
@@ -505,7 +505,7 @@ displayHighScores()
 
 ## Inventory Management
 
-```pscode
+```commonps
 function exportInventory takes in items {
     try {
         open file "inventory.csv" for writing as invFile
@@ -563,7 +563,7 @@ function importInventory {
 
 ### 1. Always Close Files
 
-```pscode
+```commonps
 // Bad - file might not close if error occurs
 open file "data.txt" for reading as fileHandle
 processFile(fileHandle)
@@ -582,7 +582,7 @@ try {
 
 ### 2. Handle Errors
 
-```pscode
+```commonps
 try {
     open file "data.txt" for reading as fileHandle
     // ... process file
@@ -595,7 +595,7 @@ try {
 
 ### 3. Validate Before Writing
 
-```pscode
+```commonps
 if data equals null OR length of data equals 0
     output "No data to save"
 else {
@@ -605,7 +605,7 @@ else {
 
 ### 4. Use Descriptive Filenames
 
-```pscode
+```commonps
 // Bad
 open file "data.txt"
 
@@ -615,7 +615,7 @@ open file "customer_orders_2024.csv"
 
 ### 5. Check File Existence
 
-```pscode
+```commonps
 // Pseudo-code for checking if file exists
 if fileExists("data.txt") {
     // Read existing file
@@ -626,7 +626,7 @@ if fileExists("data.txt") {
 
 ### 6. Use Proper File Extensions
 
-```pscode
+```commonps
 // Text files
 "notes.txt"
 "readme.txt"

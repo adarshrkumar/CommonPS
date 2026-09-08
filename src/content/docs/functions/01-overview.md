@@ -37,13 +37,13 @@ Common Pseudocode supports multiple syntax styles for calling functions:
 
 ### Standard Syntax
 
-```pscode
+```commonps
 result = functionName(arg1, arg2)
 ```
 
 ### Natural Language Syntax
 
-```pscode
+```commonps
 result = run functionName with arg1 and arg2
 ```
 
@@ -51,7 +51,7 @@ result = run functionName with arg1 and arg2
 
 For some functions, you can use natural language operators:
 
-```pscode
+```commonps
 squareRoot = sqrt of 16
 absolute = abs of -5
 textLength = length of "hello"
@@ -61,7 +61,7 @@ textLength = length of "hello"
 
 You can combine functions to perform complex operations:
 
-```pscode
+```commonps
 // Nested function calls
 result = round(sqrt of 16)      // 4
 
@@ -81,7 +81,7 @@ output "Sum of rounded numbers: {sum}"  // 19
 
 ### Input Validation
 
-```pscode
+```commonps
 output "Enter your age: "
 input ageInput
 
@@ -97,7 +97,7 @@ else
 
 ### Array Processing
 
-```pscode
+```commonps
 scores = [85, 92, 78, 95, 88]
 
 // Calculate average
@@ -116,7 +116,7 @@ output "Highest score: {highest}"
 
 ### String Formatting
 
-```pscode
+```commonps
 firstName = "john"
 lastName = "doe"
 
@@ -133,7 +133,7 @@ output fullName  // "John Doe"
 
 ### Random Selection
 
-```pscode
+```commonps
 options = ["Rock", "Paper", "Scissors"]
 randomIndex = random integer from 0 to length of options - 1
 choice = options[randomIndex]
@@ -144,7 +144,7 @@ output "Computer chose: {choice}"
 
 Built-in functions work seamlessly with your custom functions:
 
-```pscode
+```commonps
 function calculateCircleArea takes in radius
     constant PI = 3.14159
     return PI * (radius ^ 2)
@@ -165,27 +165,27 @@ Most built-in functions return values that can be:
 
 ### Stored in Variables
 
-```pscode
+```commonps
 result = sqrt of 16
 output result
 ```
 
 ### Used Directly in Expressions
 
-```pscode
+```commonps
 if length of name > 0
     output "Valid name"
 ```
 
 ### Passed to Other Functions
 
-```pscode
+```commonps
 rounded = round(sqrt of 20)  // round(4.472...) = 4
 ```
 
 ### Used in Conditions
 
-```pscode
+```commonps
 if is number(userInput)
     // Process numeric input
 ```
@@ -194,7 +194,7 @@ if is number(userInput)
 
 Some functions may fail or return special values:
 
-```pscode
+```commonps
 try
     // Division might fail
     result = 10 / denominator
@@ -214,7 +214,7 @@ else
 
 ### 1. Use Descriptive Variable Names
 
-```pscode
+```commonps
 // Good
 userAge = convert ageInput to number
 validEmail = email contains "@"
@@ -226,7 +226,7 @@ flag = email contains "@"
 
 ### 2. Combine Related Operations
 
-```pscode
+```commonps
 // Instead of multiple conversions
 cleanedInput = trim(userInput to lowercase)
 
@@ -238,7 +238,7 @@ cleaned = trimmed to lowercase
 
 ### 3. Check Types Before Operations
 
-```pscode
+```commonps
 if is array(data) AND length of data > 0
     firstElement = data[0]
     output firstElement
@@ -246,7 +246,7 @@ if is array(data) AND length of data > 0
 
 ### 4. Handle Edge Cases
 
-```pscode
+```commonps
 function safeDivide takes in numerator and denominator
     if denominator equals 0
         return 0
@@ -257,7 +257,7 @@ function safeDivide takes in numerator and denominator
 
 You can create your own functions using the `function` keyword:
 
-```pscode
+```commonps
 function add takes in num1 and num2
     return num1 + num2
 

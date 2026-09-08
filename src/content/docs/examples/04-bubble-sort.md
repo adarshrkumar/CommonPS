@@ -17,7 +17,7 @@ The bubble sort algorithm:
 
 ## Implementation
 
-```pscode
+```commonps
 function bubbleSort takes in array {
     n = length of array
 
@@ -76,7 +76,7 @@ Pass 4:
 
 ### Example 1: Sort Numbers
 
-```pscode
+```commonps
 numbers = [64, 34, 25, 12, 22, 11, 90]
 
 output "Original array: "
@@ -94,7 +94,7 @@ for each num in sortedNumbers
 
 ### Example 2: Sort User Input
 
-```pscode
+```commonps
 // Get numbers from user
 numbers = []
 count = 5
@@ -117,7 +117,7 @@ for each num in numbers
 
 ### Example 3: Sort Test Scores
 
-```pscode
+```commonps
 studentNames = ["Alice", "Bob", "Charlie", "David", "Eve"]
 scores = [78, 92, 65, 88, 95]
 
@@ -137,7 +137,7 @@ for i from 0 to length of scores - 1
 
 Stop early if the array becomes sorted:
 
-```pscode
+```commonps
 function bubbleSortOptimized takes in array {
     n = length of array
 
@@ -171,7 +171,7 @@ bubbleSortOptimized(sortedArray)  // Only needs one pass
 
 Count the number of swaps performed:
 
-```pscode
+```commonps
 function bubbleSortWithCount takes in array {
     n = length of array
     swapCount = 0
@@ -196,7 +196,7 @@ function bubbleSortWithCount takes in array {
 
 Sort in descending order (largest to smallest):
 
-```pscode
+```commonps
 function bubbleSortDescending takes in array {
     n = length of array
 
@@ -221,7 +221,7 @@ bubbleSortDescending(numbers)  // [9, 8, 5, 2, 1]
 
 Sort two arrays in parallel (keep elements aligned):
 
-```pscode
+```commonps
 function bubbleSortParallel takes in names and scores {
     n = length of names
 
@@ -251,7 +251,7 @@ bubbleSortParallel(students, scores)
 
 ## Complete Example Program
 
-```pscode
+```commonps
 function bubbleSort takes in array {
     n = length of array
     swapped = false
@@ -343,7 +343,7 @@ for each sortedPrice in sortedPrices {
 
 ## Comparison with Other Sorts
 
-```pscode
+```commonps
 /* Time to sort 10,000 elements (approximate):
    Bubble Sort: ~100 ms
    Quick Sort: ~1 ms
@@ -359,7 +359,7 @@ for each sortedPrice in sortedPrices {
 
 1. **Off-by-one errors in loop bounds**
 
-   ```pscode
+   ```commonps
    // WRONG
    for j from 0 to n - 1  // Will go out of bounds
 
@@ -369,7 +369,7 @@ for each sortedPrice in sortedPrices {
 
 2. **Forgetting to swap**
 
-   ```pscode
+   ```commonps
    // WRONG - doesn't actually swap
    array[j] = array[j + 1]
    array[j + 1] = array[j]
@@ -382,7 +382,7 @@ for each sortedPrice in sortedPrices {
 
 3. **Not reducing range each pass**
 
-   ```pscode
+   ```commonps
    // INEFFICIENT - checks already-sorted elements
    for j from 0 to n - 2
 

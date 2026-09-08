@@ -9,7 +9,7 @@ Comments help explain your code and are ignored during execution. Common Pseudoc
 
 Single-line comments start with `//` and continue to the end of the line:
 
-```pscode
+```commonps
 // This is a single-line comment
 x = 5  // This is an inline comment
 ```
@@ -18,7 +18,7 @@ x = 5  // This is an inline comment
 
 Multi-line comments are enclosed between `/*` and `*/`:
 
-```pscode
+```commonps
 /*
     This is a multi-line comment
     that spans multiple lines
@@ -28,7 +28,7 @@ x = 10
 
 You can also use multi-line comments inline:
 
-```pscode
+```commonps
 result = /* intermediate calculation */ x * y
 ```
 
@@ -39,7 +39,7 @@ result = /* intermediate calculation */ x * y
 - Use single-line comments for brief explanations
 - Use multi-line comments for longer descriptions or temporarily disabling code blocks
 
-```pscode
+```commonps
 // Good: Explains the reasoning
 // Use binary search because the array is already sorted
 index = binarySearch(sortedArray, target)

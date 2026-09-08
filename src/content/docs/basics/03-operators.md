@@ -9,7 +9,7 @@ Common Pseudocode provides a variety of operators for performing calculations an
 
 ### Basic Operations
 
-```pscode
+```commonps
 sum = 1 + 1           // Addition: 2
 difference = 10 - 5   // Subtraction: 5
 product = 3 * 4       // Multiplication: 12
@@ -20,7 +20,7 @@ quotient = 10 / 2     // Division: 5
 
 **Exponentiation** (to the power of):
 
-```pscode
+```commonps
 result = 2 ^ 3                  // 8
 result = 2 ** 3                 // 8
 result = 2 to the power of 3    // 8
@@ -28,7 +28,7 @@ result = 2 to the power of 3    // 8
 
 **Modulus** (remainder):
 
-```pscode
+```commonps
 remainder = 10 % 3              // 1
 remainder = 10 modulus 3        // 1
 remainder = remainder after 10 / 3  // 1
@@ -38,7 +38,7 @@ remainder = remainder after 10 / 3  // 1
 
 Shorthand for updating variables:
 
-```pscode
+```commonps
 num = 5
 num++           // Same as num = num + 1 (now 6)
 num--           // Same as num = num - 1 (now 5)
@@ -53,7 +53,7 @@ num ^= 2        // Same as num = num ^ 2 (now 9)
 
 ### Example
 
-```pscode
+```commonps
 num = 8
 ans = num / 3    // ans = 2.666...
 num %= 3         // num = 2
@@ -63,7 +63,7 @@ num %= 3         // num = 2
 
 Common Pseudocode includes built-in trigonometric functions:
 
-```pscode
+```commonps
 // Basic trig functions
 result = sin of 30
 result = cos of 60
@@ -89,7 +89,7 @@ Compare values and return boolean results:
 
 ### Natural Language Style
 
-```pscode
+```commonps
 if x equals y
 if x is equal to y
 if x does not equal y
@@ -102,7 +102,7 @@ if x is less than or equal to y
 
 ### Symbolic Style
 
-```pscode
+```commonps
 if x == y           // Equal to
 if x != y           // Not equal to
 if x > y            // Greater than
@@ -114,7 +114,7 @@ if x <= y           // Less than or equal to
 <!-- markdownlint-disable MD024 -->
 ### Example
 
-```pscode
+```commonps
 age = 20
 if age >= 18
     output "You are an adult"
@@ -130,7 +130,7 @@ Combine boolean conditions:
 
 All conditions must be true:
 
-```pscode
+```commonps
 if age >= 18 AND age < 65
 if age >= 18 and age < 65
 if age >= 18 && age < 65
@@ -140,7 +140,7 @@ if age >= 18 && age < 65
 
 At least one condition must be true:
 
-```pscode
+```commonps
 if day equals "Saturday" OR day equals "Sunday"
 if day equals "Saturday" or day equals "Sunday"
 if day equals "Saturday" || day equals "Sunday"
@@ -150,7 +150,7 @@ if day equals "Saturday" || day equals "Sunday"
 
 Inverts a boolean value:
 
-```pscode
+```commonps
 if NOT isLoggedIn
 if not isLoggedIn
 if !isLoggedIn
@@ -160,7 +160,7 @@ if !isLoggedIn
 
 Combine multiple logical operators:
 
-```pscode
+```commonps
 if (age >= 18 AND age < 65) OR isStudent
     output "Eligible for discount"
 
@@ -183,7 +183,7 @@ Operators are evaluated in this order (highest to lowest):
 
 **Tip:** Use parentheses to make your expressions clearer:
 
-```pscode
+```commonps
 // Less clear
 result = a + b * c
 

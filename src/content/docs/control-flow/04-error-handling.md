@@ -7,7 +7,7 @@ Error handling allows your programs to gracefully manage unexpected situations a
 
 ## Basic Try-Catch
 
-```pscode
+```commonps
 try
     result = 10 / 0
 catch error
@@ -20,7 +20,7 @@ The `try` block contains code that might fail, and the `catch` block handles the
 
 The `finally` block always executes, whether an error occurred or not:
 
-```pscode
+```commonps
 try
     result = riskyOperation()
 catch error
@@ -33,7 +33,7 @@ finally
 
 ### Division by Zero
 
-```pscode
+```commonps
 output "Enter numerator: "
 input numInput
 numerator = convert numInput to number
@@ -53,7 +53,7 @@ try {
 
 ### Invalid Type Conversion
 
-```pscode
+```commonps
 output "Enter a number: "
 input userInput
 
@@ -70,7 +70,7 @@ try {
 
 ### Array Index Out of Bounds
 
-```pscode
+```commonps
 numbers = [10, 20, 30, 40, 50]
 
 output "Enter index (0-4): "
@@ -90,7 +90,7 @@ try {
 
 ### Reading a File
 
-```pscode
+```commonps
 try {
     open file "data.txt" for reading as fileHandle
     while not end of fileHandle {
@@ -107,7 +107,7 @@ try {
 
 ### Writing to a File
 
-```pscode
+```commonps
 try {
     open file "output.txt" for writing as fileHandle
     write "Hello, World!" to fileHandle
@@ -124,7 +124,7 @@ try {
 
 ### Validating Numeric Input
 
-```pscode
+```commonps
 function getValidNumber takes in prompt and min and max {
     valid = false
     result = 0
@@ -156,7 +156,7 @@ output "Age: {age}"
 
 ### Safe Array Access
 
-```pscode
+```commonps
 function safeArrayAccess takes in array and index {
     try {
         if index < 0 OR index >= length of array {
@@ -182,7 +182,7 @@ if value != null
 
 While Common Pseudocode doesn't distinguish error types in the syntax, you can handle different scenarios:
 
-```pscode
+```commonps
 function processData takes in data {
     try {
         // Check for null/empty
@@ -210,7 +210,7 @@ function processData takes in data {
 
 ## Nested Try-Catch
 
-```pscode
+```commonps
 try {
     output "Enter filename: "
     input filename
@@ -233,7 +233,7 @@ try {
 
 ## Calculator with Error Handling
 
-```pscode
+```commonps
 function calculate takes in operation and num1 and num2 {
     try {
         switch operation
@@ -282,7 +282,7 @@ try {
 
 ## Database Connection Example
 
-```pscode
+```commonps
 function connectToDatabase takes in connectionString {
     connection = null
 
@@ -337,7 +337,7 @@ if connection != null {
 
 ## Login System with Error Handling
 
-```pscode
+```commonps
 constant MAX_ATTEMPTS = 3
 constant CORRECT_PASSWORD = "secret123"
 
@@ -388,7 +388,7 @@ finally {
 
 ## JSON Parser Example
 
-```pscode
+```commonps
 function parseJSON takes in jsonString {
     try {
         // Simplified JSON parsing
@@ -425,7 +425,7 @@ try {
 
 ### 1. Be Specific in Error Messages
 
-```pscode
+```commonps
 // Bad
 try
     value = array[index]
@@ -442,7 +442,7 @@ catch error
 
 ### 2. Always Use Finally for Cleanup
 
-```pscode
+```commonps
 fileHandle = null
 
 try {
@@ -460,7 +460,7 @@ finally {
 
 ### 3. Don't Catch Errors You Can't Handle
 
-```pscode
+```commonps
 // Bad - catching but doing nothing
 try
     criticalOperation()
@@ -479,7 +479,7 @@ catch error {
 
 ### 4. Validate Before Risky Operations
 
-```pscode
+```commonps
 // Prevent errors rather than catching them
 if denominator equals 0
     output "Error: Cannot divide by zero"
@@ -489,7 +489,7 @@ else
 
 ### 5. Provide Recovery Options
 
-```pscode
+```commonps
 try
     processData(data)
 catch error {
@@ -507,7 +507,7 @@ catch error {
 
 ### 6. Log Errors for Debugging
 
-```pscode
+```commonps
 function logError takes in errorMessage {
     try {
         open file "errors.log" for appending as logFile
@@ -541,7 +541,7 @@ catch error {
 - The error indicates a programming mistake
 - Performance is critical (validation is faster)
 
-```pscode
+```commonps
 // Unnecessary try-catch
 try
     if x > 0
