@@ -32,7 +32,7 @@ export default defineConfig({
                         {
                             ...commonpsLang,
                             name: 'commonps',
-                            aliases: ['pseudocode', 'pseudo', 'pscode', 'commonps'],
+                            aliases: ['pseudocode', 'pseudo', 'pscode'],
                         },
                     ],
                 },
